@@ -1,0 +1,209 @@
+- type: Database
+  id: DB-FindUserByPhone
+  description: 根据手机号查找用户记录，用于验证用户是否已注册。
+  dependencies:
+    - none
+  acceptanceCriteria:
+    - 当手机号存在时，返回用户记录信息。
+    - 当手机号不存在时，返回空结果。
+    - 查询操作不应修改任何数据。
+  changeLog:
+    - date: "2025-01-12"
+      description: "初始创建。"
+
+- type: Database
+  id: DB-CreateUser
+  description: 在数据库中创建一个新的用户记录。
+  dependencies:
+    - none
+  acceptanceCriteria:
+    - 成功执行后，users表中会增加一条新记录。
+    - 如果手机号已存在，操作应失败并抛出唯一性约束错误。
+    - 新用户记录应包含手机号、创建时间等基本信息。
+  changeLog:
+    - date: "2025-01-12"
+      description: "初始创建。"
+
+- type: Database
+  id: DB-CreateVerificationCode
+  description: 在数据库中创建验证码记录，包含手机号、验证码和过期时间。
+  dependencies:
+    - none
+  acceptanceCriteria:
+    - 成功执行后，verification_codes表中会增加一条新记录。
+    - 验证码记录应包含手机号、6位数字验证码、创建时间和过期时间（60秒后）。
+    - 如果同一手机号已有未过期的验证码，应更新现有记录而不是创建新记录。
+  changeLog:
+    - date: "2025-01-12"
+      description: "初始创建。"
+
+- type: Database
+  id: DB-VerifyCode
+  description: 验证手机号对应的验证码是否正确且未过期。
+  dependencies:
+    - none
+  acceptanceCriteria:
+    - 当验证码正确且未过期时，返回验证成功结果。
+    - 当验证码错误或已过期时，返回验证失败结果。
+    - 验证成功后，应将该验证码标记为已使用或删除。
+  changeLog:
+    - date: "2025-01-12"
+      description: "初始创建。"
+
+- type: Database
+  id: DB-CleanExpiredCodes
+  description: 清理数据库中已过期的验证码记录。
+  dependencies:
+    - none
+  acceptanceCriteria:
+    - 删除所有过期时间早于当前时间的验证码记录。
+    - 操作应定期执行以保持数据库清洁。
+    - 返回被清理的记录数量。
+  changeLog:
+    - date: "2025-01-12"
+      description: "初始创建。"
+
+- type: Database
+  id: DB-UpdateUserProfile
+  description: 更新用户的个人信息，如昵称、头像等。
+  dependencies:
+    - none
+  acceptanceCriteria:
+    - 成功执行后，users表中对应用户的信息被更新。
+    - 只能更新允许修改的字段（昵称、头像等）。
+    - 如果用户不存在，操作应失败。
+  changeLog:
+    - date: "2025-01-12"
+      description: "新增用户信息更新功能。"
+
+- type: Database
+  id: DB-GetProductList
+  description: 获取商品列表，支持分页、搜索和筛选。
+  dependencies:
+    - none
+  acceptanceCriteria:
+    - 支持分页查询，返回指定页码和页大小的商品列表。
+    - 支持按商品名称、分类等条件筛选。
+    - 支持按价格、创建时间等字段排序。
+    - 返回商品的基本信息（ID、名称、价格、图片、库存等）。
+  changeLog:
+    - date: "2025-01-12"
+      description: "新增商品列表查询功能。"
+
+- type: Database
+  id: DB-GetProductById
+  description: 根据商品ID获取商品的详细信息。
+  dependencies:
+    - none
+  acceptanceCriteria:
+    - 当商品ID存在时，返回完整的商品信息。
+    - 当商品ID不存在时，返回空结果。
+    - 包含商品的所有详细信息（描述、规格、库存、评价等）。
+  changeLog:
+    - date: "2025-01-12"
+      description: "新增商品详情查询功能。"
+
+- type: Database
+  id: DB-GetCartByUserId
+  description: 获取指定用户的购物车内容。
+  dependencies:
+    - none
+  acceptanceCriteria:
+    - 返回用户购物车中的所有商品及其数量。
+    - 包含商品的基本信息和小计金额。
+    - 如果购物车为空，返回空列表。
+  changeLog:
+    - date: "2025-01-12"
+      description: "新增购物车查询功能。"
+
+- type: Database
+  id: DB-AddToCart
+  description: 将商品添加到用户的购物车中。
+  dependencies:
+    - none
+  acceptanceCriteria:
+    - 如果商品已在购物车中，更新数量。
+    - 如果商品不在购物车中，创建新的购物车项。
+    - 验证商品库存是否充足。
+  changeLog:
+    - date: "2025-01-12"
+      description: "新增购物车添加功能。"
+
+- type: Database
+  id: DB-UpdateCartItem
+  description: 更新购物车中商品的数量。
+  dependencies:
+    - none
+  acceptanceCriteria:
+    - 成功更新购物车项的数量。
+    - 如果数量为0，删除该购物车项。
+    - 验证商品库存是否充足。
+  changeLog:
+    - date: "2025-01-12"
+      description: "新增购物车更新功能。"
+
+- type: Database
+  id: DB-RemoveFromCart
+  description: 从用户购物车中删除指定商品。
+  dependencies:
+    - none
+  acceptanceCriteria:
+    - 成功删除购物车中的指定商品。
+    - 如果商品不在购物车中，操作应成功但无实际影响。
+  changeLog:
+    - date: "2025-01-12"
+      description: "新增购物车删除功能。"
+
+- type: Database
+  id: DB-CreateOrder
+  description: 创建新订单并清空用户购物车。
+  dependencies:
+    - none
+  acceptanceCriteria:
+    - 在orders表中创建新订单记录。
+    - 在order_items表中创建订单商品记录。
+    - 清空用户的购物车。
+    - 更新商品库存。
+    - 操作应在事务中执行，确保数据一致性。
+  changeLog:
+    - date: "2025-01-12"
+      description: "新增订单创建功能。"
+
+- type: Database
+  id: DB-GetOrdersByUserId
+  description: 获取指定用户的订单列表。
+  dependencies:
+    - none
+  acceptanceCriteria:
+    - 返回用户的所有订单，支持分页。
+    - 支持按订单状态筛选。
+    - 包含订单的基本信息（订单号、状态、总金额、创建时间等）。
+  changeLog:
+    - date: "2025-01-12"
+      description: "新增订单列表查询功能。"
+
+- type: Database
+  id: DB-GetOrderById
+  description: 根据订单ID获取订单的详细信息。
+  dependencies:
+    - none
+  acceptanceCriteria:
+    - 当订单ID存在时，返回完整的订单信息。
+    - 包含订单商品列表、价格明细、状态、物流信息等。
+    - 验证订单属于指定用户。
+  changeLog:
+    - date: "2025-01-12"
+      description: "新增订单详情查询功能。"
+
+- type: Database
+  id: DB-UpdateOrderStatus
+  description: 更新订单的状态。
+  dependencies:
+    - none
+  acceptanceCriteria:
+    - 成功更新订单状态。
+    - 验证状态转换的合法性。
+    - 记录状态变更的时间戳。
+  changeLog:
+    - date: "2025-01-12"
+      description: "新增订单状态更新功能。"

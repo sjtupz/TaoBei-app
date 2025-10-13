@@ -1,0 +1,384 @@
+/* 注册容器 */
+.register-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 注册头部 */
+.register-header {
+    margin-bottom: 30px;
+}
+
+.register-header h2 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+.register-tabs {
+    display: flex;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.tab {
+    flex: 1;
+    padding: 12px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tab.active {
+    color: #ff6600;
+    border-bottom-color: #ff6600;
+    font-weight: 500;
+}
+
+.tab:hover {
+    color: #ff6600;
+}
+
+/* 表单样式 */
+.register-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* 手机号输入框 */
+.phone-input-container {
+    display: flex;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.phone-input-container:focus-within {
+    border-color: #ff6600;
+    box-shadow: 0 0 0 2px rgba(255, 102, 0, 0.1);
+}
+
+.country-code {
+    width: 80px;
+    padding: 12px 8px;
+    border: none;
+    background: #f5f5f5;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+}
+
+.phone-input-container input {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    background: transparent;
+}
+
+.phone-input-container input::placeholder {
+    color: #bfbfbf;
+}
+
+/* 验证码输入框 */
+.verification-input-container {
+    display: flex;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.verification-input-container:focus-within {
+    border-color: #ff6600;
+    box-shadow: 0 0 0 2px rgba(255, 102, 0, 0.1);
+}
+
+.verification-input-container input {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    background: transparent;
+}
+
+.verification-input-container input::placeholder {
+    color: #bfbfbf;
+}
+
+.send-code-btn {
+    padding: 12px 16px;
+    border: none;
+    background: #f5f5f5;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    min-width: 100px;
+}
+
+.send-code-btn:hover:not(:disabled) {
+    background: #e6e6e6;
+    color: #333;
+}
+
+.send-code-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* 协议复选框 */
+.agreement-checkbox {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 24px;
+}
+
+.agreement-checkbox input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    height: 16px;
+    width: 16px;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.agreement-checkbox:hover input ~ .checkmark {
+    border-color: #ff6600;
+}
+
+.agreement-checkbox input:checked ~ .checkmark {
+    background-color: #ff6600;
+    border-color: #ff6600;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 5px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.agreement-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.agreement-text {
+    color: #666;
+}
+
+.agreement-link {
+    color: #ff6600;
+    text-decoration: none;
+    margin: 0 2px;
+}
+
+.agreement-link:hover {
+    text-decoration: underline;
+}
+
+/* 错误状态 */
+.form-group input.error,
+.phone-input-container.error,
+.verification-input-container.error {
+    border-color: #ff4d4f;
+}
+
+.error-message {
+    color: #ff4d4f;
+    font-size: 12px;
+    margin-top: 4px;
+    line-height: 1.4;
+}
+
+.general-error {
+    background: #fff2f0;
+    border: 1px solid #ffccc7;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-bottom: 16px;
+}
+
+/* 注册按钮 */
+.register-btn {
+    width: 100%;
+    padding: 14px;
+    background: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.register-btn:hover:not(:disabled) {
+    background: #e55a00;
+}
+
+.register-btn:disabled {
+    background: #d9d9d9;
+    cursor: not-allowed;
+}
+
+/* 其他登录方式 */
+.register-footer {
+    text-align: center;
+}
+
+.divider {
+    position: relative;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #e8e8e8;
+}
+
+.divider span {
+    background: #fff;
+    padding: 0 16px;
+    color: #999;
+    font-size: 14px;
+}
+
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.social-btn {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #e8e8e8;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #666;
+}
+
+.social-btn:hover {
+    border-color: #ff6600;
+    color: #ff6600;
+}
+
+.social-btn.wechat:hover {
+    border-color: #1aad19;
+    color: #1aad19;
+}
+
+.social-btn.qq:hover {
+    border-color: #12b7f5;
+    color: #12b7f5;
+}
+
+.social-btn.weibo:hover {
+    border-color: #e6162d;
+    color: #e6162d;
+}
+
+/* 响应式设计 */
+@media (max-width: 480px) {
+    .register-container {
+        margin: 0;
+        padding: 16px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    
+    .register-header h2 {
+        font-size: 20px;
+    }
+    
+    .tab {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+    
+    .phone-input-container input,
+    .verification-input-container input {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+    
+    .country-code {
+        width: 70px;
+        padding: 10px 6px;
+        font-size: 12px;
+    }
+    
+    .send-code-btn {
+        padding: 10px 12px;
+        font-size: 12px;
+        min-width: 80px;
+    }
+    
+    .register-btn {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .agreement-checkbox {
+        font-size: 12px;
+    }
+    
+    .social-login {
+        gap: 12px;
+    }
+    
+    .social-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 10px;
+    }
+}
