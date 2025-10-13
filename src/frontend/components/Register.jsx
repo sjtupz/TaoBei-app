@@ -136,10 +136,10 @@ const Register = ({ onRegisterSuccess, onSwitchToLogin }) => {
     return (
         <div className="register-container">
             <div className="register-header">
-                <h2>短信登录</h2>
+                <h2>用户注册</h2>
                 <div className="register-tabs">
-                    <span className="tab" onClick={onSwitchToLogin}>密码登录</span>
-                    <span className="tab active">短信登录</span>
+                    <span className="tab" onClick={onSwitchToLogin}>登录</span>
+                    <span className="tab active">注册</span>
                 </div>
             </div>
 
@@ -185,7 +185,7 @@ const Register = ({ onRegisterSuccess, onSwitchToLogin }) => {
                             type="button"
                             className="send-code-btn"
                             onClick={handleSendCode}
-                            disabled={sendingCode || countdown > 0 || !formData.phoneNumber}
+                            disabled={sendingCode || countdown > 0 || !validatePhoneNumber(formData.phoneNumber)}
                         >
                             {sendingCode ? '发送中...' : countdown > 0 ? `${countdown}s` : '获取验证码'}
                         </button>
@@ -219,9 +219,15 @@ const Register = ({ onRegisterSuccess, onSwitchToLogin }) => {
                 <button
                     type="submit"
                     className="register-btn"
-                    disabled={loading}
+                    disabled={
+                        loading ||
+                        !validatePhoneNumber(formData.phoneNumber) ||
+                        !formData.verificationCode ||
+                        formData.verificationCode.length !== 6 ||
+                        !formData.agreeToTerms
+                    }
                 >
-                    {loading ? '登录中...' : '登录'}
+                    {loading ? '注册中...' : '同意并注册'}
                 </button>
 
                 <div className="register-footer">
