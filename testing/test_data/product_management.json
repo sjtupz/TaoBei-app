@@ -1,0 +1,129 @@
+{
+  "products": {
+    "valid_products": [
+      {
+        "id": 1,
+        "name": "iPhone 15 Pro",
+        "price": 7999.00,
+        "category": "手机数码",
+        "brand": "Apple",
+        "stock": 100,
+        "status": "active",
+        "description": "最新款iPhone，性能强劲",
+        "images": ["https://example.com/iphone1.jpg", "https://example.com/iphone2.jpg"],
+        "specifications": {
+          "color": "深空黑色",
+          "storage": "256GB",
+          "screen_size": "6.1英寸"
+        }
+      },
+      {
+        "id": 2,
+        "name": "MacBook Pro 14",
+        "price": 15999.00,
+        "category": "电脑办公",
+        "brand": "Apple",
+        "stock": 50,
+        "status": "active",
+        "description": "专业级笔记本电脑",
+        "images": ["https://example.com/macbook1.jpg"],
+        "specifications": {
+          "processor": "M3 Pro",
+          "memory": "16GB",
+          "storage": "512GB SSD"
+        }
+      },
+      {
+        "id": 3,
+        "name": "小米13",
+        "price": 3999.00,
+        "category": "手机数码",
+        "brand": "小米",
+        "stock": 0,
+        "status": "out_of_stock",
+        "description": "性价比之选",
+        "images": ["https://example.com/xiaomi1.jpg"],
+        "specifications": {
+          "color": "白色",
+          "storage": "128GB",
+          "screen_size": "6.36英寸"
+        }
+      }
+    ],
+    "invalid_products": [
+      {
+        "name": "",
+        "price": 100.00,
+        "error": "商品名称不能为空"
+      },
+      {
+        "name": "测试商品",
+        "price": -100.00,
+        "error": "商品价格不能为负数"
+      },
+      {
+        "name": "测试商品",
+        "price": 0,
+        "error": "商品价格必须大于0"
+      }
+    ]
+  },
+  "search_filters": {
+    "categories": ["手机数码", "电脑办公", "家用电器", "服装鞋帽", "图书音像"],
+    "brands": ["Apple", "小米", "华为", "三星", "联想", "戴尔"],
+    "price_ranges": [
+      {"min": 0, "max": 1000, "label": "1000元以下"},
+      {"min": 1000, "max": 3000, "label": "1000-3000元"},
+      {"min": 3000, "max": 5000, "label": "3000-5000元"},
+      {"min": 5000, "max": 10000, "label": "5000-10000元"},
+      {"min": 10000, "max": null, "label": "10000元以上"}
+    ],
+    "sort_options": [
+      {"value": "price_asc", "label": "价格从低到高"},
+      {"value": "price_desc", "label": "价格从高到低"},
+      {"value": "sales_desc", "label": "销量从高到低"},
+      {"value": "created_desc", "label": "最新上架"}
+    ]
+  },
+  "search_keywords": {
+    "valid_keywords": [
+      "iPhone",
+      "手机",
+      "笔记本",
+      "Apple",
+      "MacBook"
+    ],
+    "invalid_keywords": [
+      "",
+      "   ",
+      "a",
+      "这是一个非常非常非常非常非常非常非常非常非常非常长的搜索关键词超过了系统限制"
+    ],
+    "special_characters": [
+      "iPhone!",
+      "手机@#$",
+      "MacBook%^&"
+    ]
+  },
+  "boundary_conditions": {
+    "product_name_length": {
+      "min": 1,
+      "max": 100,
+      "test_cases": [
+        {"value": "a", "expected": "valid"},
+        {"value": "这是一个正常长度的商品名称", "expected": "valid"},
+        {"value": "这是一个非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的商品名称超过了一百个字符的限制", "expected": "invalid"}
+      ]
+    },
+    "price_range": {
+      "min": 0.01,
+      "max": 999999.99,
+      "test_cases": [
+        {"value": 0.01, "expected": "valid"},
+        {"value": 999999.99, "expected": "valid"},
+        {"value": 0, "expected": "invalid"},
+        {"value": 1000000, "expected": "invalid"}
+      ]
+    }
+  }
+}

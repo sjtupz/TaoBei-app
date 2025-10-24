@@ -1,0 +1,164 @@
+{
+  "cart_items": {
+    "valid_items": [
+      {
+        "product_id": 1,
+        "product_name": "iPhone 15 Pro",
+        "price": 7999.00,
+        "quantity": 1,
+        "selected": true,
+        "specifications": {
+          "color": "深空黑色",
+          "storage": "256GB"
+        }
+      },
+      {
+        "product_id": 2,
+        "product_name": "MacBook Pro 14",
+        "price": 15999.00,
+        "quantity": 2,
+        "selected": true,
+        "specifications": {
+          "processor": "M3 Pro",
+          "memory": "16GB"
+        }
+      },
+      {
+        "product_id": 3,
+        "product_name": "小米13",
+        "price": 3999.00,
+        "quantity": 1,
+        "selected": false,
+        "specifications": {
+          "color": "白色",
+          "storage": "128GB"
+        }
+      }
+    ],
+    "out_of_stock_items": [
+      {
+        "product_id": 4,
+        "product_name": "华为Mate60",
+        "price": 5999.00,
+        "quantity": 1,
+        "selected": false,
+        "stock": 0,
+        "status": "out_of_stock"
+      }
+    ]
+  },
+  "quantity_operations": {
+    "valid_quantities": [1, 2, 5, 10, 99],
+    "invalid_quantities": [
+      {
+        "quantity": 0,
+        "error": "商品数量不能为0"
+      },
+      {
+        "quantity": -1,
+        "error": "商品数量不能为负数"
+      },
+      {
+        "quantity": 100,
+        "error": "商品数量不能超过99"
+      },
+      {
+        "quantity": "abc",
+        "error": "商品数量必须为数字"
+      }
+    ],
+    "boundary_conditions": {
+      "min_quantity": 1,
+      "max_quantity": 99,
+      "test_cases": [
+        {"quantity": 1, "expected": "valid"},
+        {"quantity": 99, "expected": "valid"},
+        {"quantity": 0, "expected": "invalid"},
+        {"quantity": 100, "expected": "invalid"}
+      ]
+    }
+  },
+  "cart_scenarios": {
+    "empty_cart": {
+      "items": [],
+      "total_amount": 0,
+      "total_quantity": 0
+    },
+    "single_item_cart": {
+      "items": [
+        {
+          "product_id": 1,
+          "quantity": 1,
+          "price": 7999.00,
+          "selected": true
+        }
+      ],
+      "total_amount": 7999.00,
+      "total_quantity": 1
+    },
+    "multiple_items_cart": {
+      "items": [
+        {
+          "product_id": 1,
+          "quantity": 2,
+          "price": 7999.00,
+          "selected": true
+        },
+        {
+          "product_id": 2,
+          "quantity": 1,
+          "price": 15999.00,
+          "selected": true
+        }
+      ],
+      "total_amount": 31997.00,
+      "total_quantity": 3
+    },
+    "partial_selected_cart": {
+      "items": [
+        {
+          "product_id": 1,
+          "quantity": 1,
+          "price": 7999.00,
+          "selected": true
+        },
+        {
+          "product_id": 2,
+          "quantity": 1,
+          "price": 15999.00,
+          "selected": false
+        }
+      ],
+      "selected_total_amount": 7999.00,
+      "selected_total_quantity": 1,
+      "total_amount": 23998.00,
+      "total_quantity": 2
+    }
+  },
+  "error_scenarios": {
+    "network_errors": [
+      {
+        "scenario": "添加商品时网络超时",
+        "error_code": "NETWORK_TIMEOUT",
+        "error_message": "网络连接超时，请重试"
+      },
+      {
+        "scenario": "更新数量时服务器错误",
+        "error_code": "SERVER_ERROR",
+        "error_message": "服务器繁忙，请稍后重试"
+      }
+    ],
+    "business_errors": [
+      {
+        "scenario": "添加已下架商品",
+        "error_code": "PRODUCT_UNAVAILABLE",
+        "error_message": "该商品已下架"
+      },
+      {
+        "scenario": "添加库存不足商品",
+        "error_code": "INSUFFICIENT_STOCK",
+        "error_message": "商品库存不足"
+      }
+    ]
+  }
+}

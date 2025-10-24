@@ -1,14 +1,14 @@
 - type: Backend
   id: API-POST-SendVerificationCode
   route: POST /api/auth/send-verification-code
-  description: 发送验证码到指定手机号，用于登录和注册流程�?  input:
+  description: 发送验证码到指定手机号，用于登录和注册流程�?  input:
     type: JSON
     body:
       phoneNumber: string
   output:
     success:
       statusCode: 200
-      body: { message: "验证码已发�?, expiresIn: 60 }
+      body: { message: "验证码已发�?, expiresIn: 60 }
     error:
       - statusCode: 400
         body: { error: "请输入正确的手机号码" }
@@ -17,17 +17,17 @@
   dependencies:
     - DB-CreateVerificationCode
   acceptanceCriteria:
-    - 当接收到有效手机号时，应生成6位验证码并返回成功响应�?    - 当手机号格式无效时，应返�?00错误�?    - 验证码应在控制台打印以便开发调试�?    - 同一手机�?0秒内只能发送一次验证码�?  changeLog:
+    - 当接收到有效手机号时，应生成6位验证码并返回成功响应�?    - 当手机号格式无效时，应返�?00错误�?    - 验证码应在控制台打印以便开发调试�?    - 同一手机�?0秒内只能发送一次验证码�?  changeLog:
     - date: "2025-01-12"
-      description: "初始创建�?
+      description: "初始创建�?
 
 - type: Backend
   id: API-PUT-UpdateUserProfile
   route: PUT /api/user/profile
   description: 更新用户个人信息
   input:
-    - nickname: string (可�? - 用户昵称
-    - avatar: string (可�? - 头像URL
+    - nickname: string (可�? - 用户昵称
+    - avatar: string (可�? - 头像URL
   output:
     success:
       - code: 200
@@ -35,30 +35,30 @@
       - data: object - 更新后的用户信息
     error:
       - code: 400 - 参数错误
-      - code: 401 - 未授�?      - code: 404 - 用户不存�?  dependencies:
+      - code: 401 - 未授�?      - code: 404 - 用户不存�?  dependencies:
     - DB-UpdateUserProfile
   acceptanceCriteria:
-    - 需要用户登录状态验�?    - 成功更新用户信息并返回最新数�?    - 参数验证失败时返回具体错误信�?  changeLog:
+    - 需要用户登录状态验�?    - 成功更新用户信息并返回最新数�?    - 参数验证失败时返回具体错误信�?  changeLog:
     - date: "2025-01-12"
-      description: "新增用户信息更新接口�?
+      description: "新增用户信息更新接口�?
 
 - type: Backend
   id: API-POST-Logout
   route: POST /api/auth/logout
-  description: 用户退出登�?  input:
+  description: 用户退出登�?  input:
     - token: string - 用户认证令牌
   output:
     success:
       - code: 200
-      - message: "退出登录成�?
+      - message: "退出登录成�?
     error:
-      - code: 401 - 未授�?  dependencies:
+      - code: 401 - 未授�?  dependencies:
     - none
   acceptanceCriteria:
-    - 清除用户的登录状�?    - 使当前token失效
-    - 返回成功状�?  changeLog:
+    - 清除用户的登录状�?    - 使当前token失效
+    - 返回成功状�?  changeLog:
     - date: "2025-01-12"
-      description: "新增用户退出登录接口�?
+      description: "新增用户退出登录接口�?
 
 - type: Backend
   id: API-GET-ProductList
@@ -67,15 +67,15 @@
   input:
     - page: number (可选，默认1) - 页码
     - pageSize: number (可选，默认10) - 每页数量
-    - keyword: string (可�? - 搜索关键�?    - category: string (可�? - 商品分类
-    - sortBy: string (可�? - 排序字段
-    - sortOrder: string (可�? - 排序方向
+    - keyword: string (可�? - 搜索关键�?    - category: string (可�? - 商品分类
+    - sortBy: string (可�? - 排序字段
+    - sortOrder: string (可�? - 排序方向
   output:
     success:
       - code: 200
       - data: object
         - products: array - 商品列表
-        - total: number - 总数�?        - page: number - 当前页码
+        - total: number - 总数�?        - page: number - 当前页码
         - pageSize: number - 每页数量
     error:
       - code: 400 - 参数错误
@@ -84,10 +84,10 @@
   acceptanceCriteria:
     - 支持分页查询
     - 支持按关键词搜索
-    - 支持按分类筛�?    - 支持排序功能
+    - 支持按分类筛�?    - 支持排序功能
   changeLog:
     - date: "2025-01-12"
-      description: "新增商品列表查询接口�?
+      description: "新增商品列表查询接口�?
 
 - type: Backend
   id: API-GET-ProductDetail
@@ -100,30 +100,30 @@
       - code: 200
       - data: object - 商品详细信息
     error:
-      - code: 404 - 商品不存�?  dependencies:
+      - code: 404 - 商品不存�?  dependencies:
     - DB-GetProductById
   acceptanceCriteria:
-    - 返回完整的商品信�?    - 商品不存在时返回404错误
+    - 返回完整的商品信�?    - 商品不存在时返回404错误
   changeLog:
     - date: "2025-01-12"
-      description: "新增商品详情查询接口�?
+      description: "新增商品详情查询接口�?
 
 - type: Backend
   id: API-GET-Cart
   route: GET /api/cart
-  description: 获取用户购物�?  input:
+  description: 获取用户购物�?  input:
     - token: string - 用户认证令牌
   output:
     success:
       - code: 200
       - data: object
-        - items: array - 购物车商品列�?        - totalAmount: number - 总金�?    error:
-      - code: 401 - 未授�?  dependencies:
+        - items: array - 购物车商品列�?        - totalAmount: number - 总金�?    error:
+      - code: 401 - 未授�?  dependencies:
     - DB-GetCartByUserId
   acceptanceCriteria:
-    - 需要用户登录状态验�?    - 返回购物车中的所有商�?    - 计算总金�?  changeLog:
+    - 需要用户登录状态验�?    - 返回购物车中的所有商�?    - 计算总金�?  changeLog:
     - date: "2025-01-12"
-      description: "新增购物车查询接口�?
+      description: "新增购物车查询接口�?
 
 - type: Backend
   id: API-POST-AddToCart
@@ -137,38 +137,38 @@
     success:
       - code: 200
       - message: "添加成功"
-      - data: object - 购物车信�?    error:
-      - code: 400 - 参数错误或库存不�?      - code: 401 - 未授�?      - code: 404 - 商品不存�?  dependencies:
+      - data: object - 购物车信�?    error:
+      - code: 400 - 参数错误或库存不�?      - code: 401 - 未授�?      - code: 404 - 商品不存�?  dependencies:
     - DB-AddToCart
   acceptanceCriteria:
-    - 需要用户登录状态验�?    - 验证商品存在性和库存
+    - 需要用户登录状态验�?    - 验证商品存在性和库存
     - 成功添加到购物车
   changeLog:
     - date: "2025-01-12"
-      description: "新增购物车添加接口�?
+      description: "新增购物车添加接口�?
 
 - type: Backend
   id: API-PUT-UpdateCartItem
   route: PUT /api/cart/item/:id
-  description: 更新购物车商品数�?  input:
+  description: 更新购物车商品数�?  input:
     - id: string - 购物车项ID (路径参数)
-    - quantity: number - 新数�?    - token: string - 用户认证令牌
+    - quantity: number - 新数�?    - token: string - 用户认证令牌
   output:
     success:
       - code: 200
       - message: "更新成功"
-      - data: object - 更新后的购物车信�?    error:
-      - code: 400 - 参数错误或库存不�?      - code: 401 - 未授�?      - code: 404 - 购物车项不存�?  dependencies:
+      - data: object - 更新后的购物车信�?    error:
+      - code: 400 - 参数错误或库存不�?      - code: 401 - 未授�?      - code: 404 - 购物车项不存�?  dependencies:
     - DB-UpdateCartItem
   acceptanceCriteria:
-    - 需要用户登录状态验�?    - 验证库存充足�?    - 数量�?时删除该�?  changeLog:
+    - 需要用户登录状态验�?    - 验证库存充足�?    - 数量�?时删除该�?  changeLog:
     - date: "2025-01-12"
-      description: "新增购物车更新接口�?
+      description: "新增购物车更新接口�?
 
 - type: Backend
   id: API-DELETE-CartItem
   route: DELETE /api/cart/item/:id
-  description: 删除购物车商�?  input:
+  description: 删除购物车商�?  input:
     - id: string - 购物车项ID (路径参数)
     - token: string - 用户认证令牌
   output:
@@ -176,13 +176,13 @@
       - code: 200
       - message: "删除成功"
     error:
-      - code: 401 - 未授�?      - code: 404 - 购物车项不存�?  dependencies:
+      - code: 401 - 未授�?      - code: 404 - 购物车项不存�?  dependencies:
     - DB-RemoveFromCart
   acceptanceCriteria:
-    - 需要用户登录状态验�?    - 成功删除购物车项
+    - 需要用户登录状态验�?    - 成功删除购物车项
   changeLog:
     - date: "2025-01-12"
-      description: "新增购物车删除接口�?
+      description: "新增购物车删除接口�?
 
 - type: Backend
   id: API-POST-CreateOrder
@@ -198,15 +198,15 @@
       - message: "订单创建成功"
       - data: object - 订单信息
     error:
-      - code: 400 - 参数错误或库存不�?      - code: 401 - 未授�?  dependencies:
+      - code: 400 - 参数错误或库存不�?      - code: 401 - 未授�?  dependencies:
     - DB-CreateOrder
   acceptanceCriteria:
-    - 需要用户登录状态验�?    - 验证商品库存
+    - 需要用户登录状态验�?    - 验证商品库存
     - 创建订单并清空购物车
     - 更新商品库存
   changeLog:
     - date: "2025-01-12"
-      description: "新增订单创建接口�?
+      description: "新增订单创建接口�?
 
 - type: Backend
   id: API-GET-OrderList
@@ -215,22 +215,22 @@
   input:
     - page: number (可选，默认1) - 页码
     - pageSize: number (可选，默认10) - 每页数量
-    - status: string (可�? - 订单状态筛�?    - token: string - 用户认证令牌
+    - status: string (可�? - 订单状态筛�?    - token: string - 用户认证令牌
   output:
     success:
       - code: 200
       - data: object
         - orders: array - 订单列表
-        - total: number - 总数�?        - page: number - 当前页码
+        - total: number - 总数�?        - page: number - 当前页码
         - pageSize: number - 每页数量
     error:
-      - code: 401 - 未授�?  dependencies:
+      - code: 401 - 未授�?  dependencies:
     - DB-GetOrdersByUserId
   acceptanceCriteria:
-    - 需要用户登录状态验�?    - 支持分页查询
-    - 支持按状态筛�?  changeLog:
+    - 需要用户登录状态验�?    - 支持分页查询
+    - 支持按状态筛�?  changeLog:
     - date: "2025-01-12"
-      description: "新增订单列表查询接口�?
+      description: "新增订单列表查询接口�?
 
 - type: Backend
   id: API-GET-OrderDetail
@@ -244,14 +244,14 @@
       - code: 200
       - data: object - 订单详细信息
     error:
-      - code: 401 - 未授�?      - code: 404 - 订单不存�?  dependencies:
+      - code: 401 - 未授�?      - code: 404 - 订单不存�?  dependencies:
     - DB-GetOrderById
   acceptanceCriteria:
-    - 需要用户登录状态验�?    - 验证订单属于当前用户
+    - 需要用户登录状态验�?    - 验证订单属于当前用户
     - 返回完整订单信息
   changeLog:
     - date: "2025-01-12"
-      description: "新增订单详情查询接口�?
+      description: "新增订单详情查询接口�?
 
 - type: Backend
   id: API-PUT-CancelOrder
@@ -266,18 +266,18 @@
       - message: "订单取消成功"
     error:
       - code: 400 - 订单状态不允许取消
-      - code: 401 - 未授�?      - code: 404 - 订单不存�?  dependencies:
+      - code: 401 - 未授�?      - code: 404 - 订单不存�?  dependencies:
     - DB-UpdateOrderStatus
   acceptanceCriteria:
-    - 需要用户登录状态验�?    - 验证订单属于当前用户
-    - 验证订单状态允许取�?    - 更新订单状态为已取�?  changeLog:
+    - 需要用户登录状态验�?    - 验证订单属于当前用户
+    - 验证订单状态允许取�?    - 更新订单状态为已取�?  changeLog:
     - date: "2025-01-12"
-      description: "新增订单取消接口�?
+      description: "新增订单取消接口�?
 
 - type: Backend
   id: API-POST-Login
   route: POST /api/auth/login
-  description: 处理用户登录请求，验证手机号和验证码�?  input:
+  description: 处理用户登录请求，验证手机号和验证码�?  input:
     type: JSON
     body:
       phoneNumber: string
@@ -290,21 +290,21 @@
       - statusCode: 400
         body: { error: "请输入正确的手机号码和验证码" }
       - statusCode: 401
-        body: { error: "验证码错�? }
+        body: { error: "验证码错�? }
       - statusCode: 404
         body: { error: "该手机号未注册，请先完成注册" }
   dependencies:
     - DB-FindUserByPhone
     - DB-VerifyCode
   acceptanceCriteria:
-    - 当用户已注册且验证码正确时，应返�?00成功响应和JWT令牌�?    - 当用户未注册时，应返�?04错误�?    - 当验证码错误或过期时，应返回401错误�?    - 成功登录后应生成有效的JWT令牌�?  changeLog:
+    - 当用户已注册且验证码正确时，应返�?00成功响应和JWT令牌�?    - 当用户未注册时，应返�?04错误�?    - 当验证码错误或过期时，应返回401错误�?    - 成功登录后应生成有效的JWT令牌�?  changeLog:
     - date: "2025-01-12"
-      description: "初始创建�?
+      description: "初始创建�?
 
 - type: Backend
   id: API-POST-Register
   route: POST /api/auth/register
-  description: 处理用户注册请求，包含验证码校验和用户创建�?  input:
+  description: 处理用户注册请求，包含验证码校验和用户创建�?  input:
     type: JSON
     body:
       phoneNumber: string
@@ -316,24 +316,24 @@
       body: { message: "注册成功", userId: "uuid", token: "jwt" }
     error:
       - statusCode: 400
-        body: { error: "请输入正确的信息并同意用户协�? }
+        body: { error: "请输入正确的信息并同意用户协�? }
       - statusCode: 401
-        body: { error: "验证码错�? }
+        body: { error: "验证码错�? }
       - statusCode: 409
-        body: { error: "该手机号已注册，将直接为您登�?, userId: "uuid", token: "jwt" }
+        body: { error: "该手机号已注册，将直接为您登�?, userId: "uuid", token: "jwt" }
   dependencies:
     - DB-FindUserByPhone
     - DB-VerifyCode
     - DB-CreateUser
   acceptanceCriteria:
-    - 当接收到合法且未注册的数据时，应返回201 Created�?    - 当手机号已存在时，应返回409 Conflict并直接登录用户�?    - 当验证码错误时，应返�?01错误�?    - 当未同意用户协议时，应返�?00错误�?    - 成功注册后应自动登录用户并返回JWT令牌�?  changeLog:
+    - 当接收到合法且未注册的数据时，应返回201 Created�?    - 当手机号已存在时，应返回409 Conflict并直接登录用户�?    - 当验证码错误时，应返�?01错误�?    - 当未同意用户协议时，应返�?00错误�?    - 成功注册后应自动登录用户并返回JWT令牌�?  changeLog:
     - date: "2025-01-12"
-      description: "初始创建�?
+      description: "初始创建�?
 
 - type: Backend
   id: API-GET-UserProfile
   route: GET /api/user/profile
-  description: 获取当前登录用户的基本信息�?  input:
+  description: 获取当前登录用户的基本信息�?  input:
     type: Headers
     headers:
       Authorization: "Bearer {jwt_token}"
@@ -343,12 +343,12 @@
       body: { userId: "uuid", phoneNumber: "string", createdAt: "datetime" }
     error:
       - statusCode: 401
-        body: { error: "未授权访�? }
+        body: { error: "未授权访�? }
       - statusCode: 404
-        body: { error: "用户不存�? }
+        body: { error: "用户不存�? }
   dependencies:
     - DB-FindUserByPhone
   acceptanceCriteria:
-    - 当提供有效JWT令牌时，应返回用户基本信息�?    - 当令牌无效或过期时，应返�?01错误�?    - 当用户不存在时，应返�?04错误�?  changeLog:
+    - 当提供有效JWT令牌时，应返回用户基本信息�?    - 当令牌无效或过期时，应返�?01错误�?    - 当用户不存在时，应返�?04错误�?  changeLog:
     - date: "2025-01-12"
-      description: "初始创建�?
+      description: "初始创建�?

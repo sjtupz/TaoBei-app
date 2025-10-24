@@ -1,0 +1,30 @@
+# Test framework dependencies
+pytest==7.4.3
+pytest-bdd==7.0.1
+pytest-html==4.1.1
+pytest-xdist==3.5.0
+
+# Playwright browser automation
+playwright==1.40.0
+
+# API testing dependencies
+requests==2.31.0
+httpx==0.25.2
+
+# Data processing and validation
+pydantic==2.5.2
+faker==20.1.0
+
+# Configuration management
+python-dotenv==1.0.0
+pyyaml==6.0.1
+
+# Database operations
+# sqlite3 is a built-in Python module, no installation required
+
+# Logging and reporting
+allure-pytest==2.13.2
+pytest-json-report==1.5.0
+
+# Utilities
+python-dateutil==2.8.2

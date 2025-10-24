@@ -1,0 +1,781 @@
+<testsuite name="user_registration.用户注册" tests="17" errors="4" failures="4" skipped="0" time="136.155691" timestamp="2025-10-24T17:30:38.933618" hostname="SongBo"><testcase classname="user_registration.用户注册" name="成功注册新用户" status="failed" time="8.438594"><failure type="AssertionError" message="未找到注册成功消息，页面内容: &lt;!DOCTYPE html&gt;&lt;html lang=&quot;zh-CN&quot;&gt;&lt;head&gt;&#10;  &lt;script type=&quot;module&quot; src=&quot;/@vite/client&quot;&gt;&lt;/script&gt;&#10;&#10;    &lt;meta charset=&quot;UTF-8&quot;&gt;&#10;    &lt;link rel=&quot;icon&quot; type=&quot;image/svg+xml&quot; href=&quot;/vite.svg&quot;&gt;&#10;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;&#10;    &lt;title&gt;淘宝 - Taobao&lt;/title&gt;&#10;    &lt;meta name=&quot;description&quot; content=&quot;淘宝网 - 亚洲较大的网上交易平台，提供各类服饰、美容、家居、数码、话费/点卡充值... 数亿优质商品，同时提供担保交易(先收货后付款)等安全交易保障服务，并由商家提供退货承诺、破损补寄等消费者保障服务，让你安心享受网上购物乐趣！&quot;&gt;&#10;    &lt;meta name=&quot;keywords&quot; content=&quot;淘宝,掏宝,网上购物,C2C,在线交易,">
+<![CDATA[
+Failing step: 那么 我应该看到注册成功的消息 ... failed in 0.005s
+Location: features/user_registration.feature:16
+ASSERT FAILED: 未找到注册成功消息，页面内容: <!DOCTYPE html><html lang="zh-CN"><head>
+  <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘宝 - Taobao</title>
+    <meta name="description" content="淘宝网 - 亚洲较大的网上交易平台，提供各类服饰、美容、家居、数码、话费/点卡充值... 数亿优质商品，同时提供担保交易(先收货后付款)等安全交易保障服务，并由商家提供退货承诺、破损补寄等消费者保障服务，让你安心享受网上购物乐趣！">
+    <meta name="keywords" content="淘宝,掏宝,网上购物,C2C,在线交易,
+Traceback (most recent call last):
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+    match.run(runner.context)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "features\steps\registration_steps.py", line 126, in step_then_see_success_message
+    assert any(success_indicators), f"未找到注册成功消息，页面内容: {page_content[:500]}"
+           ~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 未找到注册成功消息，页面内容: <!DOCTYPE html><html lang="zh-CN"><head>
+  <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘宝 - Taobao</title>
+    <meta name="description" content="淘宝网 - 亚洲较大的网上交易平台，提供各类服饰、美容、家居、数码、话费/点卡充值... 数亿优质商品，同时提供担保交易(先收货后付款)等安全交易保障服务，并由商家提供退货承诺、破损补寄等消费者保障服务，让你安心享受网上购物乐趣！">
+    <meta name="keywords" content="淘宝,掏宝,网上购物,C2C,在线交易,
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 成功注册新用户
+    假设 我在注册页面 ... passed in 2.267s
+    当 我输入有效的手机号 "13800138000" ... passed in 1.042s
+    并且 我点击获取验证码按钮 ... passed in 1.041s
+    并且 我输入验证码 "123456" ... passed in 1.026s
+    并且 我勾选用户协议复选框 ... passed in 0.529s
+    并且 我点击注册按钮 ... passed in 2.529s
+    那么 我应该看到注册成功的消息 ... failed in 0.005s
+    并且 我应该被重定向到登录页面 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+开始执行场景: 成功注册新用户
+
+场景失败，截图保存至: screenshots/成功注册新用户.png
+场景执行完成: 成功注册新用户 - 状态: Status.failed
+
+Console: [vite] connecting...
+Console: [vite] connected.
+Console: %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+Console: Failed to load resource: the server responded with a status of 404 (Not Found)
+Console: 发送验证码失败: SyntaxError: Failed to execute 'json' on 'Response': Unexpected end of JSON input
+    at handleSendCode (http://localhost:5173/components/Register.jsx?t=1761294633819:53:35)
+Console: Failed to load resource: the server responded with a status of 404 (Not Found)
+Console: 注册失败: SyntaxError: Failed to execute 'json' on 'Response': Unexpected end of JSON input
+    at handleRegister (http://localhost:5173/components/Register.jsx?t=1761294633819:95:35)
+步骤失败: 我应该看到注册成功的消息
+当前URL: http://localhost:5173/
+页面标题: 淘宝 - Taobao
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="user_registration.用户注册" name="使用无效手机号注册" status="passed" time="5.741683"><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 使用无效手机号注册
+    假设 我在注册页面 ... passed in 2.166s
+    当 我输入无效的手机号 "123" ... passed in 1.028s
+    并且 我点击注册按钮 ... passed in 2.544s
+    那么 我应该看到错误消息 "请输入正确的手机号码" ... passed in 0.003s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+开始执行场景: 使用无效手机号注册
+
+场景执行完成: 使用无效手机号注册 - 状态: Status.passed
+
+Console: [vite] connecting...
+Console: [vite] connected.
+Console: %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="user_registration.用户注册" name="空手机号注册" status="passed" time="5.237854"><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 空手机号注册
+    假设 我在注册页面 ... passed in 2.182s
+    当 我不输入手机号 ... passed in 0.515s
+    并且 我点击注册按钮 ... passed in 2.536s
+    那么 我应该看到错误消息 "请输入手机号" ... passed in 0.004s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+开始执行场景: 空手机号注册
+
+场景执行完成: 空手机号注册 - 状态: Status.passed
+
+Console: [vite] connecting...
+Console: [vite] connected.
+Console: %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="user_registration.用户注册" name="未输入验证码注册" status="passed" time="6.311626"><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 未输入验证码注册
+    假设 我在注册页面 ... passed in 2.187s
+    当 我输入有效的手机号 "13800138001" ... passed in 1.045s
+    并且 我不输入验证码 ... passed in 0.527s
+    并且 我点击注册按钮 ... passed in 2.549s
+    那么 我应该看到错误消息 "请输入验证码" ... passed in 0.005s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+开始执行场景: 未输入验证码注册
+
+场景执行完成: 未输入验证码注册 - 状态: Status.passed
+
+Console: [vite] connecting...
+Console: [vite] connected.
+Console: %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="user_registration.用户注册" name="未勾选用户协议注册" status="passed" time="6.840814"><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 未勾选用户协议注册
+    假设 我在注册页面 ... passed in 2.212s
+    当 我输入有效的手机号 "13800138002" ... passed in 1.051s
+    并且 我输入验证码 "123456" ... passed in 1.032s
+    并且 我不勾选用户协议复选框 ... passed in 0.008s
+    并且 我点击注册按钮 ... passed in 2.535s
+    那么 我应该看到错误消息 "请同意用户协议" ... passed in 0.004s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+开始执行场景: 未勾选用户协议注册
+
+场景执行完成: 未勾选用户协议注册 - 状态: Status.passed
+
+Console: [vite] connecting...
+Console: [vite] connected.
+Console: %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="user_registration.用户注册" name="验证码格式错误" status="passed" time="7.365753"><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 验证码格式错误
+    假设 我在注册页面 ... passed in 2.203s
+    当 我输入有效的手机号 "13800138003" ... passed in 1.044s
+    并且 我输入无效的验证码 "12" ... passed in 1.041s
+    并且 我勾选用户协议复选框 ... passed in 0.532s
+    并且 我点击注册按钮 ... passed in 2.542s
+    那么 我应该看到错误消息 "请输入6位验证码" ... passed in 0.004s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+开始执行场景: 验证码格式错误
+
+场景执行完成: 验证码格式错误 - 状态: Status.passed
+
+Console: [vite] connecting...
+Console: [vite] connected.
+Console: %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="user_registration.用户注册" name="获取验证码按钮状态变化" status="error" time="4.268156"><error type="AttributeError" message="'RegisterPage' object has no attribute 'get_verification_code_button'">
+<![CDATA[
+Failing step: 那么 获取验证码按钮应该被禁用 ... error in 0.003s
+Location: features/user_registration.feature:52
+Traceback (most recent call last):
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+    match.run(runner.context)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "features\steps\registration_steps.py", line 162, in step_then_get_code_button_disabled
+    button = context.register_page.get_verification_code_button
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RegisterPage' object has no attribute 'get_verification_code_button'. Did you mean: 'get_verification_code_value'?
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 获取验证码按钮状态变化
+    假设 我在注册页面 ... passed in 2.169s
+    当 我输入有效的手机号 "13800138004" ... passed in 1.041s
+    并且 我点击获取验证码按钮 ... passed in 1.056s
+    那么 获取验证码按钮应该被禁用 ... error in 0.003s
+    并且 我应该看到倒计时显示 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+开始执行场景: 获取验证码按钮状态变化
+
+场景执行完成: 获取验证码按钮状态变化 - 状态: Status.error
+
+Console: [vite] connecting...
+Console: [vite] connected.
+Console: %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+Console: Failed to load resource: the server responded with a status of 404 (Not Found)
+Console: 发送验证码失败: SyntaxError: Failed to execute 'json' on 'Response': Unexpected end of JSON input
+    at handleSendCode (http://localhost:5173/components/Register.jsx?t=1761294633819:53:35)
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="user_registration.用户注册" name="表单验证实时反馈" status="error" time="4.768823"><error type="AttributeError" message="'str' object has no attribute 'input_value'">
+<![CDATA[
+Failing step: 那么 手机号输入框的错误状态应该被清除 ... error in 0.001s
+Location: features/user_registration.feature:59
+Traceback (most recent call last):
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+    match.run(runner.context)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "features\steps\registration_steps.py", line 200, in step_then_phone_input_error_cleared
+    phone_value = context.register_page.phone_input.input_value()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'input_value'
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 表单验证实时反馈
+    假设 我在注册页面 ... passed in 2.197s
+    当 我输入无效的手机号 "abc" ... passed in 1.029s
+    那么 手机号输入框应该显示错误状态 ... passed in 0.004s
+    当 我清空手机号并输入有效的手机号 "13800138005" ... passed in 1.538s
+    那么 手机号输入框的错误状态应该被清除 ... error in 0.001s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+开始执行场景: 表单验证实时反馈
+
+场景执行完成: 表单验证实时反馈 - 状态: Status.error
+
+Console: [vite] connecting...
+Console: [vite] connected.
+Console: %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="user_registration.用户注册" name="页面导航" status="error" time="32.184552"><error type="TimeoutError" message="Locator.wait_for: Timeout 30000ms exceeded.&#10;Call log:&#10;  - waiting for locator(&quot;a:has-text(\&quot;已有账号？去登录\&quot;)&quot;) to be visible">
+<![CDATA[
+Failing step: 当 我点击"已有账号？立即登录"链接 ... error in 30.014s
+Location: features/user_registration.feature:62
+Traceback (most recent call last):
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+    match.run(runner.context)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "features\steps\registration_steps.py", line 100, in step_when_click_link
+    context.register_page.click_login_link()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Project\taobei-app\testing\pages\register_page.py", line 118, in click_login_link
+    self.click_element(self.login_link)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\Project\taobei-app\testing\pages\base_page.py", line 39, in click_element
+    element.wait_for(state="visible", timeout=timeout)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 17975, in wait_for
+    self._sync(self._impl_obj.wait_for(timeout=timeout, state=state))
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_locator.py", line 692, in wait_for
+    await self._frame.wait_for_selector(
+        self._selector, strict=True, timeout=timeout, state=state
+    )
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 369, in wait_for_selector
+    await self._channel.send(
+        "waitForSelector", self._timeout, locals_to_params(locals())
+    )
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.wait_for: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("a:has-text(\"已有账号？去登录\")") to be visible
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 页面导航
+    假设 我在注册页面 ... passed in 2.170s
+    当 我点击"已有账号？立即登录"链接 ... error in 30.014s
+    那么 我应该被重定向到登录页面 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+开始执行场景: 页面导航
+
+场景执行完成: 页面导航 - 状态: Status.error
+
+Console: [vite] connecting...
+Console: [vite] connected.
+Console: %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="user_registration.用户注册" name="多种无效手机号格式验证 -- @1.1 " status="passed" time="5.74815"><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 多种无效手机号格式验证 -- @1.1 
+    假设 我在注册页面 ... passed in 2.183s
+    当 我在注册页面输入手机号 "123" ... passed in 1.028s
+    并且 我点击注册按钮 ... passed in 2.533s
+    那么 我应该看到错误消息 "请输入正确的手机号码" ... passed in 0.004s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+开始执行场景: 多种无效手机号格式验证 -- @1.1 
+
+场景执行完成: 多种无效手机号格式验证 -- @1.1  - 状态: Status.passed
+
+Console: [vite] connecting...
+Console: [vite] connected.
+Console: %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="user_registration.用户注册" name="多种无效手机号格式验证 -- @1.2 " status="passed" time="5.906942"><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 多种无效手机号格式验证 -- @1.2 
+    假设 我在注册页面 ... passed in 2.329s
+    当 我在注册页面输入手机号 "1380013800" ... passed in 1.043s
+    并且 我点击注册按钮 ... passed in 2.532s
+    那么 我应该看到错误消息 "请输入正确的手机号码" ... passed in 0.003s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+开始执行场景: 多种无效手机号格式验证 -- @1.2 
+
+场景执行完成: 多种无效手机号格式验证 -- @1.2  - 状态: Status.passed
+
+Console: [vite] connecting...
+Console: [vite] connected.
+Console: %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="user_registration.用户注册" name="多种无效手机号格式验证 -- @1.3 " status="failed" time="5.788412"><failure type="AssertionError" message="未找到错误消息 '请输入正确的手机号码'，页面内容: &lt;!DOCTYPE html&gt;&lt;html lang=&quot;zh-CN&quot;&gt;&lt;head&gt;&#10;  &lt;script type=&quot;module&quot; src=&quot;/@vite/client&quot;&gt;&lt;/script&gt;&#10;&#10;    &lt;meta charset=&quot;UTF-8&quot;&gt;&#10;    &lt;link rel=&quot;icon&quot; type=&quot;image/svg+xml&quot; href=&quot;/vite.svg&quot;&gt;&#10;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;&#10;    &lt;title&gt;淘宝 - Taobao&lt;/title&gt;&#10;    &lt;meta name=&quot;description&quot; content=&quot;淘宝网 - 亚洲较大的网上交易平台，提供各类服饰、美容、家居、数码、话费/点卡充值... 数亿优质商品，同时提供担保交易(先收货后付款)等安全交易保障服务，并由商家提供退货承诺、破损补寄等消费者保障服务，让你安心享受网上购物乐趣！&quot;&gt;&#10;    &lt;meta name=&quot;keywords&quot; content=&quot;淘宝,掏宝,网上购物,C2C,在线交易,">
+<![CDATA[
+Failing step: 那么 我应该看到错误消息 "请输入正确的手机号码" ... failed in 0.004s
+Location: features/user_registration.feature:68
+ASSERT FAILED: 未找到错误消息 '请输入正确的手机号码'，页面内容: <!DOCTYPE html><html lang="zh-CN"><head>
+  <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘宝 - Taobao</title>
+    <meta name="description" content="淘宝网 - 亚洲较大的网上交易平台，提供各类服饰、美容、家居、数码、话费/点卡充值... 数亿优质商品，同时提供担保交易(先收货后付款)等安全交易保障服务，并由商家提供退货承诺、破损补寄等消费者保障服务，让你安心享受网上购物乐趣！">
+    <meta name="keywords" content="淘宝,掏宝,网上购物,C2C,在线交易,
+Traceback (most recent call last):
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+    match.run(runner.context)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "features\steps\registration_steps.py", line 156, in step_then_see_error_message
+    assert found_error, f"未找到错误消息 '{error_message}'，页面内容: {page_content[:500]}"
+           ^^^^^^^^^^^
+AssertionError: 未找到错误消息 '请输入正确的手机号码'，页面内容: <!DOCTYPE html><html lang="zh-CN"><head>
+  <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘宝 - Taobao</title>
+    <meta name="description" content="淘宝网 - 亚洲较大的网上交易平台，提供各类服饰、美容、家居、数码、话费/点卡充值... 数亿优质商品，同时提供担保交易(先收货后付款)等安全交易保障服务，并由商家提供退货承诺、破损补寄等消费者保障服务，让你安心享受网上购物乐趣！">
+    <meta name="keywords" content="淘宝,掏宝,网上购物,C2C,在线交易,
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 多种无效手机号格式验证 -- @1.3 
+    假设 我在注册页面 ... passed in 2.202s
+    当 我在注册页面输入手机号 "138001380000" ... passed in 1.041s
+    并且 我点击注册按钮 ... passed in 2.541s
+    那么 我应该看到错误消息 "请输入正确的手机号码" ... failed in 0.004s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+开始执行场景: 多种无效手机号格式验证 -- @1.3 
+
+场景失败，截图保存至: screenshots/多种无效手机号格式验证_--_@1.3_.png
+场景执行完成: 多种无效手机号格式验证 -- @1.3  - 状态: Status.failed
+
+Console: [vite] connecting...
+Console: [vite] connected.
+Console: %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+步骤失败: 我应该看到错误消息 "请输入正确的手机号码"
+当前URL: http://localhost:5173/
+页面标题: 淘宝 - Taobao
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="user_registration.用户注册" name="多种无效手机号格式验证 -- @1.4 " status="passed" time="5.747338"><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 多种无效手机号格式验证 -- @1.4 
+    假设 我在注册页面 ... passed in 2.182s
+    当 我在注册页面输入手机号 "abc123" ... passed in 1.023s
+    并且 我点击注册按钮 ... passed in 2.539s
+    那么 我应该看到错误消息 "请输入正确的手机号码" ... passed in 0.003s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+开始执行场景: 多种无效手机号格式验证 -- @1.4 
+
+场景执行完成: 多种无效手机号格式验证 -- @1.4  - 状态: Status.passed
+
+Console: [vite] connecting...
+Console: [vite] connected.
+Console: %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="user_registration.用户注册" name="多种无效手机号格式验证 -- @1.5 " status="passed" time="5.77375"><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 多种无效手机号格式验证 -- @1.5 
+    假设 我在注册页面 ... passed in 2.197s
+    当 我在注册页面输入手机号 "12345678901" ... passed in 1.030s
+    并且 我点击注册按钮 ... passed in 2.542s
+    那么 我应该看到错误消息 "请输入正确的手机号码" ... passed in 0.005s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+开始执行场景: 多种无效手机号格式验证 -- @1.5 
+
+场景执行完成: 多种无效手机号格式验证 -- @1.5  - 状态: Status.passed
+
+Console: [vite] connecting...
+Console: [vite] connected.
+Console: %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="user_registration.用户注册" name="重复注册已存在的手机号" status="failed" time="8.38453"><failure type="AssertionError" message="未找到错误消息 '该手机号已注册'，页面内容: &lt;!DOCTYPE html&gt;&lt;html lang=&quot;zh-CN&quot;&gt;&lt;head&gt;&#10;  &lt;script type=&quot;module&quot; src=&quot;/@vite/client&quot;&gt;&lt;/script&gt;&#10;&#10;    &lt;meta charset=&quot;UTF-8&quot;&gt;&#10;    &lt;link rel=&quot;icon&quot; type=&quot;image/svg+xml&quot; href=&quot;/vite.svg&quot;&gt;&#10;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;&#10;    &lt;title&gt;淘宝 - Taobao&lt;/title&gt;&#10;    &lt;meta name=&quot;description&quot; content=&quot;淘宝网 - 亚洲较大的网上交易平台，提供各类服饰、美容、家居、数码、话费/点卡充值... 数亿优质商品，同时提供担保交易(先收货后付款)等安全交易保障服务，并由商家提供退货承诺、破损补寄等消费者保障服务，让你安心享受网上购物乐趣！&quot;&gt;&#10;    &lt;meta name=&quot;keywords&quot; content=&quot;淘宝,掏宝,网上购物,C2C,在线交易,">
+<![CDATA[
+Failing step: 那么 我应该看到错误消息 "该手机号已注册" ... failed in 0.004s
+Location: features/user_registration.feature:85
+ASSERT FAILED: 未找到错误消息 '该手机号已注册'，页面内容: <!DOCTYPE html><html lang="zh-CN"><head>
+  <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘宝 - Taobao</title>
+    <meta name="description" content="淘宝网 - 亚洲较大的网上交易平台，提供各类服饰、美容、家居、数码、话费/点卡充值... 数亿优质商品，同时提供担保交易(先收货后付款)等安全交易保障服务，并由商家提供退货承诺、破损补寄等消费者保障服务，让你安心享受网上购物乐趣！">
+    <meta name="keywords" content="淘宝,掏宝,网上购物,C2C,在线交易,
+Traceback (most recent call last):
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+    match.run(runner.context)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "features\steps\registration_steps.py", line 156, in step_then_see_error_message
+    assert found_error, f"未找到错误消息 '{error_message}'，页面内容: {page_content[:500]}"
+           ^^^^^^^^^^^
+AssertionError: 未找到错误消息 '该手机号已注册'，页面内容: <!DOCTYPE html><html lang="zh-CN"><head>
+  <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘宝 - Taobao</title>
+    <meta name="description" content="淘宝网 - 亚洲较大的网上交易平台，提供各类服饰、美容、家居、数码、话费/点卡充值... 数亿优质商品，同时提供担保交易(先收货后付款)等安全交易保障服务，并由商家提供退货承诺、破损补寄等消费者保障服务，让你安心享受网上购物乐趣！">
+    <meta name="keywords" content="淘宝,掏宝,网上购物,C2C,在线交易,
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 重复注册已存在的手机号
+    假设 我在注册页面 ... passed in 2.196s
+    假设 手机号 "13800138006" 已经注册过 ... passed in 0.000s
+    当 我输入手机号 "13800138006" ... passed in 1.030s
+    并且 我点击获取验证码按钮 ... passed in 1.057s
+    并且 我输入验证码 "123456" ... passed in 1.031s
+    并且 我勾选用户协议复选框 ... passed in 0.528s
+    并且 我点击注册按钮 ... passed in 2.539s
+    那么 我应该看到错误消息 "该手机号已注册" ... failed in 0.004s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+开始执行场景: 重复注册已存在的手机号
+
+场景失败，截图保存至: screenshots/重复注册已存在的手机号.png
+场景执行完成: 重复注册已存在的手机号 - 状态: Status.failed
+
+Console: [vite] connecting...
+Console: [vite] connected.
+Console: %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+Console: Failed to load resource: the server responded with a status of 404 (Not Found)
+Console: 发送验证码失败: SyntaxError: Failed to execute 'json' on 'Response': Unexpected end of JSON input
+    at handleSendCode (http://localhost:5173/components/Register.jsx?t=1761294633819:53:35)
+Console: Failed to load resource: the server responded with a status of 404 (Not Found)
+Console: 注册失败: SyntaxError: Failed to execute 'json' on 'Response': Unexpected end of JSON input
+    at handleRegister (http://localhost:5173/components/Register.jsx?t=1761294633819:95:35)
+步骤失败: 我应该看到错误消息 "该手机号已注册"
+当前URL: http://localhost:5173/
+页面标题: 淘宝 - Taobao
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="user_registration.用户注册" name="网络错误处理" status="error" time="4.271125"><error type="AttributeError" message="'RegisterPage' object has no attribute 'get_verification_code_button'">
+<![CDATA[
+Failing step: 并且 获取验证码按钮应该恢复可用状态 ... error in 0.002s
+Location: features/user_registration.feature:92
+Traceback (most recent call last):
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+    match.run(runner.context)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "features\steps\registration_steps.py", line 242, in step_then_get_code_button_enabled
+    button = context.register_page.get_verification_code_button
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RegisterPage' object has no attribute 'get_verification_code_button'. Did you mean: 'get_verification_code_value'?
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 网络错误处理
+    假设 我在注册页面 ... passed in 2.179s
+    假设 网络连接不稳定 ... passed in 0.000s
+    当 我输入有效的手机号 "13800138007" ... passed in 1.042s
+    并且 我点击获取验证码按钮 ... passed in 1.044s
+    那么 我应该看到网络错误提示 ... passed in 0.004s
+    并且 获取验证码按钮应该恢复可用状态 ... error in 0.002s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+开始执行场景: 网络错误处理
+
+场景执行完成: 网络错误处理 - 状态: Status.error
+
+Console: [vite] connecting...
+Console: [vite] connected.
+Console: %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+Console: Failed to load resource: the server responded with a status of 404 (Not Found)
+Console: 发送验证码失败: SyntaxError: Failed to execute 'json' on 'Response': Unexpected end of JSON input
+    at handleSendCode (http://localhost:5173/components/Register.jsx?t=1761294633819:53:35)
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="user_registration.用户注册" name="验证码过期处理" status="failed" time="13.377589"><failure type="AssertionError" message="未找到错误消息 '验证码已过期'，页面内容: &lt;!DOCTYPE html&gt;&lt;html lang=&quot;zh-CN&quot;&gt;&lt;head&gt;&#10;  &lt;script type=&quot;module&quot; src=&quot;/@vite/client&quot;&gt;&lt;/script&gt;&#10;&#10;    &lt;meta charset=&quot;UTF-8&quot;&gt;&#10;    &lt;link rel=&quot;icon&quot; type=&quot;image/svg+xml&quot; href=&quot;/vite.svg&quot;&gt;&#10;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;&#10;    &lt;title&gt;淘宝 - Taobao&lt;/title&gt;&#10;    &lt;meta name=&quot;description&quot; content=&quot;淘宝网 - 亚洲较大的网上交易平台，提供各类服饰、美容、家居、数码、话费/点卡充值... 数亿优质商品，同时提供担保交易(先收货后付款)等安全交易保障服务，并由商家提供退货承诺、破损补寄等消费者保障服务，让你安心享受网上购物乐趣！&quot;&gt;&#10;    &lt;meta name=&quot;keywords&quot; content=&quot;淘宝,掏宝,网上购物,C2C,在线交易,">
+<![CDATA[
+Failing step: 那么 我应该看到错误消息 "验证码已过期" ... failed in 0.007s
+Location: features/user_registration.feature:101
+ASSERT FAILED: 未找到错误消息 '验证码已过期'，页面内容: <!DOCTYPE html><html lang="zh-CN"><head>
+  <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘宝 - Taobao</title>
+    <meta name="description" content="淘宝网 - 亚洲较大的网上交易平台，提供各类服饰、美容、家居、数码、话费/点卡充值... 数亿优质商品，同时提供担保交易(先收货后付款)等安全交易保障服务，并由商家提供退货承诺、破损补寄等消费者保障服务，让你安心享受网上购物乐趣！">
+    <meta name="keywords" content="淘宝,掏宝,网上购物,C2C,在线交易,
+Traceback (most recent call last):
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+    match.run(runner.context)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "features\steps\registration_steps.py", line 156, in step_then_see_error_message
+    assert found_error, f"未找到错误消息 '{error_message}'，页面内容: {page_content[:500]}"
+           ^^^^^^^^^^^
+AssertionError: 未找到错误消息 '验证码已过期'，页面内容: <!DOCTYPE html><html lang="zh-CN"><head>
+  <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘宝 - Taobao</title>
+    <meta name="description" content="淘宝网 - 亚洲较大的网上交易平台，提供各类服饰、美容、家居、数码、话费/点卡充值... 数亿优质商品，同时提供担保交易(先收货后付款)等安全交易保障服务，并由商家提供退货承诺、破损补寄等消费者保障服务，让你安心享受网上购物乐趣！">
+    <meta name="keywords" content="淘宝,掏宝,网上购物,C2C,在线交易,
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 验证码过期处理
+    假设 我在注册页面 ... passed in 2.193s
+    当 我输入有效的手机号 "13800138008" ... passed in 1.028s
+    并且 我点击获取验证码按钮 ... passed in 1.038s
+    并且 我等待验证码过期 ... passed in 5.016s
+    并且 我输入验证码 "123456" ... passed in 1.024s
+    并且 我勾选用户协议复选框 ... passed in 0.528s
+    并且 我点击注册按钮 ... passed in 2.543s
+    那么 我应该看到错误消息 "验证码已过期" ... failed in 0.007s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+开始执行场景: 验证码过期处理
+
+场景失败，截图保存至: screenshots/验证码过期处理.png
+场景执行完成: 验证码过期处理 - 状态: Status.failed
+
+Console: [vite] connecting...
+Console: [vite] connected.
+Console: %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+Console: Failed to load resource: the server responded with a status of 404 (Not Found)
+Console: 发送验证码失败: SyntaxError: Failed to execute 'json' on 'Response': Unexpected end of JSON input
+    at handleSendCode (http://localhost:5173/components/Register.jsx?t=1761294633819:53:35)
+Console: Failed to load resource: the server responded with a status of 404 (Not Found)
+Console: 注册失败: SyntaxError: Failed to execute 'json' on 'Response': Unexpected end of JSON input
+    at handleRegister (http://localhost:5173/components/Register.jsx?t=1761294633819:95:35)
+步骤失败: 我应该看到错误消息 "验证码已过期"
+当前URL: http://localhost:5173/
+页面标题: 淘宝 - Taobao
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase></testsuite>

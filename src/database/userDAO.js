@@ -13,6 +13,18 @@ class UserDAO {
         }
     }
 
+    // DB-FindUserByUsername: 根据用户名查找用户记录
+    async findUserByUsername(username) {
+        try {
+            const sql = 'SELECT * FROM users WHERE username = ?';
+            const user = await database.get(sql, [username]);
+            return user || null;
+        } catch (error) {
+            console.error('根据用户名查找用户失败:', error);
+            throw error;
+        }
+    }
+
     // DB-CreateUser: 在数据库中创建一个新的用户记录
     async createUser(phoneNumber, nickname = null, avatar = null) {
         try {

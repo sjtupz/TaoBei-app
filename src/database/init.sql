@@ -4,6 +4,8 @@
 CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     phone_number VARCHAR(11) UNIQUE NOT NULL,
+    username VARCHAR(50) UNIQUE,
+    password TEXT,
     nickname VARCHAR(50),
     avatar TEXT,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -73,6 +75,7 @@ CREATE TABLE IF NOT EXISTS order_items (
 
 -- 创建索引以提高查询性能
 CREATE INDEX IF NOT EXISTS idx_users_phone ON users(phone_number);
+CREATE INDEX IF NOT EXISTS idx_users_username ON users(username);
 CREATE INDEX IF NOT EXISTS idx_verification_codes_phone ON verification_codes(phone_number);
 CREATE INDEX IF NOT EXISTS idx_verification_codes_expires ON verification_codes(expires_at);
 CREATE INDEX IF NOT EXISTS idx_products_category ON products(category);

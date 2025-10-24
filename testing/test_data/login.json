@@ -1,0 +1,21 @@
+{
+  "registered_users": [
+    {
+      "phone": "13800138000",
+      "status": "active"
+    },
+    {
+      "phone": "13800138001",
+      "status": "active"
+    },
+    {
+      "phone": "13800138002",
+      "status": "inactive"
+    }
+  ],
+  "unregistered_phones": [
+    "13900139000",
+    "13900139001",
+    "13900139002"
+  ]
+}

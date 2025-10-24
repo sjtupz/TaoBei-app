@@ -1,193 +1,237 @@
 import React, { useState, useEffect } from 'react';
-import Login from './components/Login';
-import Register from './components/Register';
 import './App.css';
+import UnifiedLogin from './components/UnifiedLogin';
+import Register from './components/Register';
 
-const App = () => {
-    const [currentView, setCurrentView] = useState('login'); // 'login' or 'register'
-    const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(true);
+function App() {
+  const [currentView, setCurrentView] = useState('login');
+  const [error, setError] = useState('');
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [qrStatus, setQrStatus] = useState('loading'); // loading, success, error
 
-    // 检查用户登录状态
-    useEffect(() => {
-        const token = localStorage.getItem('token');
-        const userData = localStorage.getItem('user');
-        
-        if (token && userData) {
-            try {
-                setUser(JSON.parse(userData));
-            } catch (error) {
-                console.error('解析用户数据失败:', error);
-                localStorage.removeItem('token');
-                localStorage.removeItem('user');
-            }
-        }
-        setLoading(false);
-    }, []);
+  // 清除错误提示
+  const clearError = () => {
+    setError('');
+  };
 
-    // 处理登录成功
-    const handleLoginSuccess = (userData) => {
-        setUser(userData);
-    };
+  // 显示错误提示
+  const showError = (message) => {
+    setError(message);
+    setTimeout(() => {
+      setError('');
+    }, 3000);
+  };
 
-    // 处理注册成功
-    const handleRegisterSuccess = (userData) => {
-        setUser(userData);
-    };
-
-    // 处理退出登录
-    const handleLogout = async () => {
-        try {
-            const token = localStorage.getItem('token');
-            if (token) {
-                await fetch('/api/auth/logout', {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': `Bearer ${token}`,
-                        'Content-Type': 'application/json',
-                    },
-                });
-            }
-        } catch (error) {
-            console.error('退出登录失败:', error);
-        } finally {
-            localStorage.removeItem('token');
-            localStorage.removeItem('user');
-            setUser(null);
-        }
-    };
-
-    // 切换到注册页面
-    const switchToRegister = () => {
+  // 切换到注册页面
+  const switchToRegister = () => {
+    try {
+      if (isAnimating) return;
+      
+      setIsAnimating(true);
+      clearError();
+      
+      console.log('切换到注册页面...');
+      
+      setTimeout(() => {
         setCurrentView('register');
-    };
+        setIsAnimating(false);
+        console.log('成功切换到注册页面');
+      }, 150);
+      
+    } catch (error) {
+      console.error('切换到注册页面时发生错误:', error);
+      showError('页面切换失败，请重试');
+      setIsAnimating(false);
+    }
+  };
 
-    // 切换到登录页面
-    const switchToLogin = () => {
+  // 切换到登录页面
+  const switchToLogin = () => {
+    try {
+      if (isAnimating) return;
+      
+      setIsAnimating(true);
+      clearError();
+      
+      console.log('切换到登录页面...');
+      
+      setTimeout(() => {
         setCurrentView('login');
-    };
-
-    if (loading) {
-        return (
-            <div className="app-loading">
-                <div className="loading-spinner"></div>
-                <p>加载中...</p>
-            </div>
-        );
+        setIsAnimating(false);
+        console.log('成功切换到登录页面');
+      }, 150);
+      
+    } catch (error) {
+      console.error('切换到登录页面时发生错误:', error);
+      showError('页面切换失败，请重试');
+      setIsAnimating(false);
     }
+  };
 
-    // 已登录状态
-    if (user) {
-        return (
-            <div className="app-container">
-                <header className="app-header">
-                    <div className="header-content">
-                        <div className="logo">
-                            <h1>淘宝</h1>
-                            <span className="logo-subtitle">Taobao</span>
-                        </div>
-                        <div className="user-info">
-                            <span className="welcome-text">欢迎，{user.nickname || user.phoneNumber}</span>
-                            <button className="logout-btn" onClick={handleLogout}>
-                                退出登录
-                            </button>
-                        </div>
-                    </div>
-                </header>
-
-                <main className="app-main">
-                    <div className="main-content">
-                        <div className="welcome-section">
-                            <h2>欢迎来到淘宝</h2>
-                            <p>您已成功登录，可以开始购物了！</p>
-                            
-                            <div className="user-profile">
-                                <h3>个人信息</h3>
-                                <div className="profile-item">
-                                    <label>手机号：</label>
-                                    <span>{user.phoneNumber}</span>
-                                </div>
-                                <div className="profile-item">
-                                    <label>昵称：</label>
-                                    <span>{user.nickname || '未设置'}</span>
-                                </div>
-                                <div className="profile-item">
-                                    <label>注册时间：</label>
-                                    <span>{user.createdAt ? new Date(user.createdAt).toLocaleDateString() : '未知'}</span>
-                                </div>
-                            </div>
-
-                            <div className="quick-actions">
-                                <h3>快捷操作</h3>
-                                <div className="action-buttons">
-                                    <button className="action-btn">浏览商品</button>
-                                    <button className="action-btn">我的订单</button>
-                                    <button className="action-btn">购物车</button>
-                                    <button className="action-btn">个人设置</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </main>
-            </div>
-        );
+  // 处理登录成功
+  const handleLoginSuccess = (userInfo) => {
+    try {
+      console.log('登录成功，用户信息:', userInfo);
+      
+      // 显示成功消息
+      alert('登录成功！');
+      
+      // 跳转到首页URL
+      window.history.pushState({}, '', '/home');
+      
+      // 设置视图状态
+      setCurrentView('dashboard');
+      
+    } catch (error) {
+      console.error('处理登录成功时发生错误:', error);
+      showError('登录成功但页面跳转失败');
     }
+  };
 
-    // 未登录状态
-    return (
-        <div className="app-container">
-            <header className="app-header">
-                <div className="header-content">
-                    <div className="logo">
-                        <h1>淘宝</h1>
-                        <span className="logo-subtitle">Taobao</span>
-                    </div>
-                    <div className="header-links">
-                        <a href="#" className="header-link">网站导航</a>
-                        <a href="#" className="header-link">帮助中心</a>
-                    </div>
-                </div>
-            </header>
+  // 自动清除错误提示
+  useEffect(() => {
+    if (error) {
+      const timer = setTimeout(() => {
+        setError('');
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [error]);
 
-            <main className="app-main">
-                <div className="auth-container">
-                    <div className="auth-left">
-                        <div className="qr-section">
-                            <h3>手机扫码登录</h3>
-                            <div className="qr-code">
-                                <div className="qr-placeholder">
-                                    <svg width="200" height="200" viewBox="0 0 200 200">
-                                        <rect width="200" height="200" fill="#f5f5f5" stroke="#ddd"/>
-                                        <text x="100" y="100" textAnchor="middle" dy=".3em" fill="#999">
-                                            二维码
-                                        </text>
-                                    </svg>
-                                </div>
-                            </div>
-                            <p className="qr-tip">打开淘宝APP，扫一扫登录</p>
-                            <p className="qr-question">
-                                <a href="#">无法扫码？</a>
-                            </p>
-                        </div>
-                    </div>
+  // 模拟二维码加载
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setQrStatus('success');
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
 
-                    <div className="auth-right">
-                        {currentView === 'login' ? (
-                            <Login 
-                                onLoginSuccess={handleLoginSuccess}
-                                onSwitchToRegister={switchToRegister}
-                            />
-                        ) : (
-                            <Register 
-                                onRegisterSuccess={handleRegisterSuccess}
-                                onSwitchToLogin={switchToLogin}
-                            />
-                        )}
-                    </div>
-                </div>
-            </main>
+  return (
+    <div className="app">
+      {/* 顶部导航栏 */}
+      <header className="app-header">
+        <div className="app-logo">
+          <h1>淘宝</h1>
+          <span className="logo-text">Taobao</span>
         </div>
-    );
-};
+        <nav className="app-nav">
+          <a href="#" className="nav-link">网站无障碍</a>
+          <a href="#" className="nav-link highlight">登录页面</a>
+          <span className="nav-link">欢迎建议</span>
+        </nav>
+      </header>
+
+      {/* 主内容区域 */}
+      <main className="app-main">
+        <div className="auth-container">
+          {/* 左侧 - 手机扫码登录 */}
+          <div className="qr-section">
+            <div className="qr-content">
+              <div className="qr-tabs">
+                <div className="qr-tab active">手机扫码登录</div>
+              </div>
+              <div className="qr-code-container">
+                <div className="qr-code">
+                  {qrStatus === 'loading' && (
+                    <div className="qr-loading">
+                      <div className="loading-spinner"></div>
+                      <p>正在生成二维码...</p>
+                    </div>
+                  )}
+                  {qrStatus === 'success' && (
+                    <svg width="180" height="180" viewBox="0 0 180 180">
+                      {/* 优化的二维码图案 */}
+                      <rect width="180" height="180" fill="#fff"/>
+                      {/* 三个定位角 */}
+                      <rect x="8" y="8" width="28" height="28" fill="#000"/>
+                      <rect x="12" y="12" width="20" height="20" fill="#fff"/>
+                      <rect x="16" y="16" width="12" height="12" fill="#000"/>
+                      
+                      <rect x="144" y="8" width="28" height="28" fill="#000"/>
+                      <rect x="148" y="12" width="20" height="20" fill="#fff"/>
+                      <rect x="152" y="16" width="12" height="12" fill="#000"/>
+                      
+                      <rect x="8" y="144" width="28" height="28" fill="#000"/>
+                      <rect x="12" y="148" width="20" height="20" fill="#fff"/>
+                      <rect x="16" y="152" width="12" height="12" fill="#000"/>
+                      
+                      {/* 中心淘宝logo */}
+                      <rect x="76" y="76" width="28" height="28" fill="#ff6600" rx="4"/>
+                      <text x="90" y="95" textAnchor="middle" fill="#fff" fontSize="12" fontWeight="bold">淘</text>
+                      
+                      {/* 数据模块 */}
+                      {Array.from({length: 200}, (_, i) => {
+                        const x = 8 + (i % 20) * 8;
+                        const y = 8 + Math.floor(i / 20) * 8;
+                        const isInCorner = (x < 40 && y < 40) || (x > 140 && y < 40) || (x < 40 && y > 140);
+                        const isInCenter = x > 72 && x < 108 && y > 72 && y < 108;
+                        if (isInCorner || isInCenter) return null;
+                        return (
+                          <rect key={i} 
+                            x={x} 
+                            y={y} 
+                            width="6" 
+                            height="6" 
+                            fill={Math.random() > 0.5 ? "#000" : "#fff"}
+                          />
+                        );
+                      })}
+                    </svg>
+                  )}
+                  {qrStatus === 'error' && (
+                    <div className="qr-error">
+                      <div className="error-icon">⚠</div>
+                      <p>二维码生成失败</p>
+                      <button className="retry-btn" onClick={() => setQrStatus('loading')}>
+                        重新生成
+                      </button>
+                    </div>
+                  )}
+                </div>
+                <p className="qr-tip">打开淘宝APP，点击右上角扫一扫</p>
+              </div>
+              <div className="qr-help">
+                <a href="#" className="help-link">怎么扫码登录?</a>
+              </div>
+            </div>
+          </div>
+
+          {/* 右侧 - 登录/注册表单 */}
+          <div className="form-section">
+            <div className={`page-container ${isAnimating ? 'animating' : ''}`}>
+              {currentView === 'login' ? (
+                <UnifiedLogin 
+                  onSwitchToRegister={switchToRegister}
+                  onLoginSuccess={handleLoginSuccess}
+                  error={error}
+                  clearError={clearError}
+                />
+              ) : currentView === 'register' ? (
+                <Register 
+                  onSwitchToLogin={switchToLogin}
+                  error={error}
+                  clearError={clearError}
+                />
+              ) : (
+                <div className="dashboard">
+                  <h2>欢迎来到淘宝！</h2>
+                  <p>登录成功，您已进入系统。</p>
+                  <button onClick={switchToLogin}>返回登录</button>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </main>
+
+      {/* 错误提示 */}
+      {error && (
+        <div className={`error-toast ${error ? '' : 'fade-out'}`}>
+          {error}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default App;

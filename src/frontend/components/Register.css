@@ -1,384 +1,478 @@
-/* 注册容器 */
-.register-container {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+/* 注册容器 - 精确匹配设计图 */
+.register {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
 }
 
-/* 注册头部 */
-.register-header {
-    margin-bottom: 30px;
+/* 注册标题 - 精确字体和间距 */
+.register-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 32px;
+  text-align: left;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
 }
 
-.register-header h2 {
-    font-size: 24px;
-    font-weight: 500;
-    color: #333;
-    margin: 0 0 20px 0;
-    text-align: center;
+/* 通用错误信息 - 精确匹配设计图 */
+.general-error {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  color: #ff4d4f;
+  font-size: 13px;
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
 }
 
-.register-tabs {
-    display: flex;
-    border-bottom: 1px solid #e8e8e8;
+.general-error::before {
+  content: '!';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff4d4f;
+  color: #fff;
+  font-size: 11px;
+  line-height: 16px;
+  text-align: center;
+  flex-shrink: 0;
+  margin-top: 1px;
 }
 
-.tab {
-    flex: 1;
-    padding: 12px 0;
-    text-align: center;
-    font-size: 16px;
-    color: #666;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    transition: all 0.3s ease;
-}
-
-.tab.active {
-    color: #ff6600;
-    border-bottom-color: #ff6600;
-    font-weight: 500;
-}
-
-.tab:hover {
-    color: #ff6600;
-}
-
-/* 表单样式 */
+/* 注册表单 - 精确间距 */
 .register-form {
-    width: 100%;
+  width: 100%;
 }
 
+/* 表单组 - 精确间距 */
 .form-group {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+  position: relative;
 }
 
-/* 手机号输入框 */
-.phone-input-container {
-    display: flex;
-    border: 1px solid #d9d9d9;
-    border-radius: 4px;
-    overflow: hidden;
-    transition: border-color 0.3s ease;
+.form-group.error {
+  margin-bottom: 8px;
 }
 
-.phone-input-container:focus-within {
-    border-color: #ff6600;
-    box-shadow: 0 0 0 2px rgba(255, 102, 0, 0.1);
-}
-
-.country-code {
-    width: 80px;
-    padding: 12px 8px;
-    border: none;
-    background: #f5f5f5;
+.form-group label {
     font-size: 14px;
+    font-weight: 500;
     color: #333;
-    outline: none;
 }
 
-.phone-input-container input {
-    flex: 1;
-    padding: 12px 16px;
-    border: none;
-    font-size: 16px;
-    outline: none;
-    background: transparent;
+/* 输入框样式 - 精确匹配设计图 */
+.form-input,
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="tel"] {
+  width: 100%;
+  height: 44px;
+  padding: 0 16px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  background: #fff;
+  transition: all 0.2s ease;
+  outline: none;
+  box-sizing: border-box;
 }
 
-.phone-input-container input::placeholder {
-    color: #bfbfbf;
+.form-input::placeholder,
+.form-group input::placeholder {
+  color: #bfbfbf;
+  font-size: 14px;
 }
 
-/* 验证码输入框 */
-.verification-input-container {
-    display: flex;
-    border: 1px solid #d9d9d9;
-    border-radius: 4px;
-    overflow: hidden;
-    transition: border-color 0.3s ease;
+.form-input:focus,
+.form-group input:focus {
+  border-color: #ff6600;
+  box-shadow: 0 0 0 2px rgba(255, 102, 0, 0.1);
 }
 
-.verification-input-container:focus-within {
-    border-color: #ff6600;
-    box-shadow: 0 0 0 2px rgba(255, 102, 0, 0.1);
+.form-input.error,
+.form-group input.error {
+  border-color: #ff4d4f;
 }
 
-.verification-input-container input {
-    flex: 1;
-    padding: 12px 16px;
-    border: none;
-    font-size: 16px;
-    outline: none;
-    background: transparent;
+.form-input.error:focus,
+.form-group input.error:focus {
+  border-color: #ff4d4f;
+  box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.1);
 }
 
-.verification-input-container input::placeholder {
-    color: #bfbfbf;
+/* 密码强度指示器 - 精确匹配设计图 */
+.password-strength {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.strength-bars {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.strength-bar {
+  height: 4px;
+  flex: 1;
+  background: #e8e8e8;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.strength-bar.active {
+  background: #ff6600;
+}
+
+.strength-bar.active.weak {
+  background: #ff4d4f;
+}
+
+.strength-bar.active.medium {
+  background: #faad14;
+}
+
+.strength-bar.active.strong {
+  background: #52c41a;
+}
+
+.strength-fill {
+    height: 100%;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.strength-0 .strength-fill {
+    width: 0%;
+    background: #e1e5e9;
+}
+
+.strength-1 .strength-fill {
+    width: 20%;
+    background: #dc3545;
+}
+
+.strength-2 .strength-fill {
+    width: 40%;
+    background: #fd7e14;
+}
+
+.strength-3 .strength-fill {
+    width: 60%;
+    background: #ffc107;
+}
+
+.strength-4 .strength-fill {
+    width: 80%;
+    background: #20c997;
+}
+
+.strength-5 .strength-fill {
+    width: 100%;
+    background: #28a745;
+}
+
+.strength-text {
+  font-size: 12px;
+  color: #666;
+  min-width: 40px;
+  text-align: right;
+}
+
+.strength-text.weak {
+  color: #ff4d4f;
+}
+
+.strength-text.medium {
+  color: #faad14;
+}
+
+.strength-text.strong {
+  color: #52c41a;
+}
+
+.strength-1 .strength-text {
+    color: #dc3545;
+}
+
+.strength-2 .strength-text,
+.strength-3 .strength-text {
+    color: #fd7e14;
+}
+
+.strength-4 .strength-text,
+.strength-5 .strength-text {
+    color: #28a745;
+}
+
+/* 国家代码选择器 - 精确匹配设计图 */
+.country-code-group,
+.phone-input-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.country-code-selector,
+.country-code {
+  width: 80px;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+  text-align: center;
+}
+
+.country-code-selector:focus,
+.country-code:focus {
+  border-color: #ff6600;
+  box-shadow: 0 0 0 2px rgba(255, 102, 0, 0.1);
+}
+
+.phone-input,
+.phone-input-group input {
+  flex: 1;
+}
+
+/* 验证码组合 - 精确匹配设计图 */
+.verification-group,
+.verification-input-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.verification-input,
+.verification-input-group input {
+  flex: 1;
 }
 
 .send-code-btn {
-    padding: 12px 16px;
-    border: none;
-    background: #f5f5f5;
-    color: #666;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-    min-width: 100px;
+  width: 100px;
+  height: 44px;
+  padding: 0 16px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  background: #fff;
+  color: #666;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+  white-space: nowrap;
+  min-width: 100px;
 }
 
 .send-code-btn:hover:not(:disabled) {
-    background: #e6e6e6;
-    color: #333;
+  border-color: #ff6600;
+  color: #ff6600;
 }
 
 .send-code-btn:disabled {
-    cursor: not-allowed;
-    opacity: 0.6;
+  background: #f5f5f5;
+  color: #bfbfbf;
+  cursor: not-allowed;
+  border-color: #e8e8e8;
+  transform: none;
 }
 
-/* 协议复选框 */
-.agreement-checkbox {
-    display: flex;
-    align-items: flex-start;
-    cursor: pointer;
-    font-size: 14px;
-    line-height: 1.5;
-    position: relative;
-    padding-left: 24px;
+/* 用户协议 - 精确匹配设计图 */
+.terms-and-conditions,
+.agreement-group {
+  margin: 24px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.4;
 }
 
-.agreement-checkbox input[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
+.terms-checkbox,
+.checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  cursor: pointer;
+  accent-color: #ff6600;
 }
 
-.checkmark {
-    position: absolute;
-    left: 0;
-    top: 2px;
-    height: 16px;
-    width: 16px;
-    background-color: #fff;
-    border: 1px solid #d9d9d9;
-    border-radius: 2px;
-    transition: all 0.3s ease;
+.terms-text,
+.checkbox-label {
+  color: #666;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  line-height: 1.4;
 }
 
-.agreement-checkbox:hover input ~ .checkmark {
-    border-color: #ff6600;
+.terms-link,
+.checkbox-label a {
+  color: #ff6600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  margin: 0 2px;
 }
 
-.agreement-checkbox input:checked ~ .checkmark {
-    background-color: #ff6600;
-    border-color: #ff6600;
+.terms-link:hover,
+.checkbox-label a:hover {
+  color: #e55a00;
+  text-decoration: underline;
 }
 
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-    left: 5px;
-    top: 2px;
-    width: 4px;
-    height: 8px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-}
-
-.agreement-checkbox input:checked ~ .checkmark:after {
-    display: block;
-}
-
-.agreement-text {
-    color: #666;
-}
-
-.agreement-link {
-    color: #ff6600;
-    text-decoration: none;
-    margin: 0 2px;
-}
-
-.agreement-link:hover {
-    text-decoration: underline;
-}
-
-/* 错误状态 */
-.form-group input.error,
-.phone-input-container.error,
-.verification-input-container.error {
-    border-color: #ff4d4f;
-}
-
-.error-message {
-    color: #ff4d4f;
-    font-size: 12px;
-    margin-top: 4px;
-    line-height: 1.4;
-}
-
-.general-error {
-    background: #fff2f0;
-    border: 1px solid #ffccc7;
-    border-radius: 4px;
-    padding: 8px 12px;
-    margin-bottom: 16px;
-}
-
-/* 注册按钮 */
+/* 注册按钮 - 精确匹配设计图的橙色渐变 */
 .register-btn {
-    width: 100%;
-    padding: 14px;
-    background: #ff6600;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 20px;
+  width: 100%;
+  height: 44px;
+  border: none;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #ff6600 0%, #ff8533 100%);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 4px rgba(255, 102, 0, 0.2);
+  padding: 14px 20px;
+  margin-top: 10px;
 }
 
 .register-btn:hover:not(:disabled) {
-    background: #e55a00;
+  background: linear-gradient(135deg, #e55a00 0%, #ff7300 100%);
+  box-shadow: 0 4px 8px rgba(255, 102, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+.register-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(255, 102, 0, 0.2);
 }
 
 .register-btn:disabled {
-    background: #d9d9d9;
-    cursor: not-allowed;
+  background: #d9d9d9;
+  color: #bfbfbf;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
 }
 
-/* 其他登录方式 */
-.register-footer {
+
+
+/* 登录链接 */
+.login-link {
     text-align: center;
-}
-
-.divider {
-    position: relative;
-    margin: 20px 0;
-    text-align: center;
-}
-
-.divider::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: #e8e8e8;
-}
-
-.divider span {
-    background: #fff;
-    padding: 0 16px;
-    color: #999;
+    margin-top: 20px;
     font-size: 14px;
-}
-
-.social-login {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-}
-
-.social-btn {
-    width: 60px;
-    height: 60px;
-    border: 1px solid #e8e8e8;
-    border-radius: 50%;
-    background: #fff;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
     color: #666;
 }
 
-.social-btn:hover {
-    border-color: #ff6600;
-    color: #ff6600;
+.login-link span {
+    margin-right: 8px;
 }
 
-.social-btn.wechat:hover {
-    border-color: #1aad19;
-    color: #1aad19;
+.back-to-login {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.social-btn.qq:hover {
-    border-color: #12b7f5;
-    color: #12b7f5;
+.back-to-login:hover {
+    color: #0056b3;
+    text-decoration: underline;
 }
 
-.social-btn.weibo:hover {
-    border-color: #e6162d;
-    color: #e6162d;
+.back-to-login:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+.back-to-login:active {
+    color: #004085;
+}
+
+/* 错误消息 */
+.error-message {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.general-error {
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 16px;
+    font-size: 14px;
 }
 
 /* 响应式设计 */
 @media (max-width: 480px) {
     .register-container {
-        margin: 0;
+        margin: 10px;
         padding: 16px;
-        border-radius: 0;
-        box-shadow: none;
     }
     
-    .register-header h2 {
-        font-size: 20px;
-    }
-    
-    .tab {
-        font-size: 14px;
-        padding: 10px 0;
-    }
-    
-    .phone-input-container input,
-    .verification-input-container input {
-        font-size: 14px;
-        padding: 10px 12px;
+    .phone-input-group,
+    .verification-input-group {
+        flex-direction: column;
     }
     
     .country-code {
-        width: 70px;
-        padding: 10px 6px;
-        font-size: 12px;
+        width: 100%;
     }
     
     .send-code-btn {
-        padding: 10px 12px;
-        font-size: 12px;
-        min-width: 80px;
+        min-width: auto;
+        width: 100%;
     }
-    
-    .register-btn {
-        padding: 12px;
-        font-size: 14px;
+}
+
+/* 动画效果 */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    
-    .agreement-checkbox {
-        font-size: 12px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-    
-    .social-login {
-        gap: 12px;
-    }
-    
-    .social-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 10px;
-    }
+}
+
+.register-container {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* 焦点可见性 */
+.form-group input:focus-visible,
+.send-code-btn:focus-visible,
+.register-btn:focus-visible {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
 }

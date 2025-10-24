@@ -75,7 +75,81 @@ router.post('/send-verification-code',
     }
 );
 
-// API-POST-Login: 用户登录
+// API-POST-PasswordLogin: 账号密码登录
+router.post('/password-login',
+    [
+        body('account')
+            .notEmpty()
+            .withMessage('账号不能为空'),
+        body('password')
+            .notEmpty()
+            .withMessage('密码不能为空')
+            .isLength({ min: 6 })
+            .withMessage('密码至少6位')
+    ],
+    async (req, res) => {
+        try {
+            // 验证请求参数
+            const errors = validationResult(req);
+            if (!errors.isEmpty()) {
+                return res.status(400).json({ 
+                    error: errors.array()[0].msg 
+                });
+            }
+
+            const { account, password } = req.body;
+            const { comparePassword } = require('../utils/auth');
+
+            let user = null;
+
+            // 判断账号是手机号还是用户名
+            if (validatePhoneNumber(account)) {
+                // 手机号登录
+                user = await userDAO.findUserByPhone(account);
+            } else {
+                // 用户名登录
+                user = await userDAO.findUserByUsername(account);
+            }
+
+            if (!user) {
+                return res.status(400).json({ 
+                    error: '账号或密码错误' 
+                });
+            }
+
+            // 验证密码
+            const isPasswordValid = await comparePassword(password, user.password);
+            if (!isPasswordValid) {
+                return res.status(400).json({ 
+                    error: '账号或密码错误' 
+                });
+            }
+
+            // 生成JWT token
+            const token = generateToken({
+                userId: user.id,
+                phoneNumber: user.phone_number
+            });
+
+            res.status(200).json({
+                message: '登录成功',
+                token,
+                user: {
+                    id: user.id,
+                    phoneNumber: user.phone_number,
+                    nickname: user.nickname,
+                    avatar: user.avatar
+                }
+            });
+
+        } catch (error) {
+            console.error('账号登录失败:', error);
+            res.status(500).json({ error: '服务器内部错误' });
+        }
+    }
+);
+
+// API-POST-Login: 短信验证码登录
 router.post('/login',
     [
         body('phoneNumber')

@@ -1,0 +1,258 @@
+<testsuite name="login.用户登录" tests="5" errors="2" failures="0" skipped="0" time="62.878058" timestamp="2025-10-24T22:32:34.921672" hostname="SongBo"><testcase classname="login.用户登录" name="请求验证码时手机号格式无效" status="error" time="34.298167"><error type="TimeoutError" message="Locator.is_enabled: Timeout 30000ms exceeded.&#10;Call log:&#10;  - waiting for locator(&quot;[data-testid=\&quot;get-verification-code-btn\&quot;]&quot;)">
+<![CDATA[
+Failing step: 那么 系统不发送验证码 ... error in 30.013s
+Location: features/login.feature:14
+Traceback (most recent call last):
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+    match.run(runner.context)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "features\steps\login_steps.py", line 165, in step_system_does_not_send_verification_code
+    assert get_code_button.is_enabled(), "获取验证码按钮应该仍然可点击"
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 17142, in is_enabled
+    self._sync(self._impl_obj.is_enabled(timeout=timeout))
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_locator.py", line 498, in is_enabled
+    return await self._frame.is_enabled(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 398, in is_enabled
+    return await self._channel.send(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+        "isEnabled", self._timeout, locals_to_params(locals())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.is_enabled: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[data-testid=\"get-verification-code-btn\"]")
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 请求验证码时手机号格式无效
+    假如 系统已经启动 ... passed in 0.001s
+    并且 数据库已经初始化 ... passed in 0.000s
+    假如 用户在登录页面 ... passed in 2.195s
+    当 用户在登录页面输入一个无效的手机号"123"并点击"获取验证码" ... passed in 2.089s
+    那么 系统不发送验证码 ... error in 30.013s
+    并且 页面提示"请输入正确的手机号码" ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 请求验证码时手机号格式无效
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 请求验证码时手机号格式无效
+
+系统已启动
+数据库已初始化
+用户输入无效手机号: 123
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="login.用户登录" name="成功获取验证码" status="error" time="4.239382"><error type="AttributeError" message="'Context' object has no attribute 'register_page'">
+<![CDATA[
+Failing step: 并且 "获取验证码"按钮进入60秒倒计时且不可点击 ... error in 0.001s
+Location: features/login.feature:21
+Traceback (most recent call last):
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+    match.run(runner.context)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "features\steps\register_steps.py", line 207, in step_get_code_button_countdown_register
+    is_disabled = context.register_page.is_get_code_button_disabled()
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\runner.py", line 430, in __getattr__
+    raise AttributeError(msg)
+AttributeError: 'Context' object has no attribute 'register_page'
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 成功获取验证码
+    假如 系统已经启动 ... passed in 0.000s
+    并且 数据库已经初始化 ... passed in 0.000s
+    假如 用户在登录页面 ... passed in 2.153s
+    当 用户在登录页面输入一个格式正确的手机号"13800138000"并点击"获取验证码" ... passed in 2.084s
+    那么 系统为该手机号生成一个6位验证码并打印在控制台 ... passed in 0.000s
+    并且 "获取验证码"按钮进入60秒倒计时且不可点击 ... error in 0.001s
+    并且 数据库记录手机号和验证码，有效期为60秒 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 成功获取验证码
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 成功获取验证码
+
+系统已启动
+数据库已初始化
+用户输入有效手机号: 13800138000，已创建验证码: 123456
+生成验证码: 123456
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="login.用户登录" name="使用未注册的手机号登录" status="passed" time="5.779948"><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 使用未注册的手机号登录
+    假如 系统已经启动 ... passed in 0.000s
+    并且 数据库已经初始化 ... passed in 0.000s
+    假如 一个手机号"13900139000"未被注册 ... passed in 0.001s
+    并且 用户在登录页面 ... passed in 2.152s
+    当 用户使用该未注册的手机号和正确的验证码点击"登录" ... passed in 3.619s
+    那么 系统不让用户登录 ... passed in 0.000s
+    并且 页面提示"该手机号未注册，请先完成注册" ... passed in 0.007s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 使用未注册的手机号登录
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 使用未注册的手机号登录
+
+系统已启动
+数据库已初始化
+手机号 13900139000 未被注册
+使用未注册手机号 13900139000 尝试登录，验证码: 123456
+系统阻止了用户登录
+页面显示消息: 该手机号未注册，请先完成注册 (使用选择器: text="该手机号未注册，请先完成注册")
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="login.用户登录" name="使用错误的验证码登录" status="passed" time="5.781342"><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 使用错误的验证码登录
+    假如 系统已经启动 ... passed in 0.000s
+    并且 数据库已经初始化 ... passed in 0.000s
+    假如 一个手机号"13800138000"已被注册 ... passed in 0.001s
+    并且 用户在登录页面 ... passed in 2.135s
+    当 用户使用该手机号和错误的验证码"000000"点击"登录" ... passed in 3.638s
+    那么 系统不让用户登录 ... passed in 0.000s
+    并且 页面提示"验证码错误" ... passed in 0.007s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 使用错误的验证码登录
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 使用错误的验证码登录
+
+系统已启动
+数据库已初始化
+手机号 13800138000 已被注册
+使用手机号 13800138000 和错误验证码 000000 尝试登录
+系统阻止了用户登录
+页面显示消息: 验证码错误 (使用选择器: text="验证码错误")
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="login.用户登录" name="成功登录" status="passed" time="12.779219"><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 成功登录
+    假如 系统已经启动 ... passed in 0.000s
+    并且 数据库已经初始化 ... passed in 0.000s
+    假如 一个手机号"13800138000"已被注册 ... passed in 0.001s
+    并且 用户在登录页面 ... passed in 2.137s
+    当 用户使用该手机号和正确的验证码点击"登录" ... passed in 3.622s
+    那么 系统验证成功 ... passed in 2.012s
+    并且 页面提示"登录成功" ... passed in 2.006s
+    并且 页面自动跳转到首页 ... passed in 3.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 成功登录
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 成功登录
+
+系统已启动
+数据库已初始化
+手机号 13800138000 已被注册
+使用手机号 13800138000 和正确验证码 123456 登录
+系统验证成功
+未检测到JavaScript弹窗，尝试其他方式验证登录成功
+通过localStorage验证登录成功: token=eyJhbGciOiJIUzI1NiIs..., user={"id":197,"phoneNumber":"13800138000","nickname":"...
+当前页面URL: http://localhost:5173/home
+页面成功跳转到首页
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase></testsuite>
