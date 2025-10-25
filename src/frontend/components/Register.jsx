@@ -230,19 +230,33 @@ const Register = ({ onRegisterSuccess, onSwitchToLogin }) => {
                     username: formData.username,
                     password: formData.password,
                     phoneNumber: formData.phoneNumber,
-                    verificationCode: formData.verificationCode
+                    verificationCode: formData.verificationCode,
+                    agreeToTerms: formData.agreeToTerms ? 'true' : 'false'
                 }),
             });
 
             if (response.ok) {
-                const userData = await response.json();
-                onRegisterSuccess(userData);
+                try {
+                    const userData = await response.json();
+                    onRegisterSuccess(userData);
+                } catch (parseError) {
+                    console.log('注册成功，但响应解析失败:', parseError);
+                    // 即使解析失败，注册也是成功的
+                    onRegisterSuccess({ message: '注册成功' });
+                }
             } else {
-                const errorData = await response.json();
-                setErrors(prev => ({
-                    ...prev,
-                    general: errorData.message || '注册失败，请重试'
-                }));
+                try {
+                    const errorData = await response.json();
+                    setErrors(prev => ({
+                        ...prev,
+                        general: errorData.message || '注册失败，请重试'
+                    }));
+                } catch (parseError) {
+                    setErrors(prev => ({
+                        ...prev,
+                        general: '注册失败，请重试'
+                    }));
+                }
             }
         } catch (error) {
             console.error('注册错误:', error);

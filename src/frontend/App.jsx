@@ -88,6 +88,26 @@ function App() {
     }
   };
 
+  // 处理注册成功
+  const handleRegisterSuccess = (userInfo) => {
+    try {
+      console.log('注册成功，用户信息:', userInfo);
+      
+      // 显示成功消息
+      alert('注册成功！');
+      
+      // 跳转到首页URL
+      window.history.pushState({}, '', '/home');
+      
+      // 设置视图状态
+      setCurrentView('dashboard');
+      
+    } catch (error) {
+      console.error('处理注册成功时发生错误:', error);
+      showError('注册成功但页面跳转失败');
+    }
+  };
+
   // 自动清除错误提示
   useEffect(() => {
     if (error) {
@@ -209,6 +229,7 @@ function App() {
               ) : currentView === 'register' ? (
                 <Register 
                   onSwitchToLogin={switchToLogin}
+                  onRegisterSuccess={handleRegisterSuccess}
                   error={error}
                   clearError={clearError}
                 />
