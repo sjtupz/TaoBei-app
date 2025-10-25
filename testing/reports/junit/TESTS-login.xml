@@ -1,7 +1,7 @@
-<testsuite name="login.用户登录" tests="5" errors="2" failures="0" skipped="0" time="62.878058" timestamp="2025-10-24T22:32:34.921672" hostname="SongBo"><testcase classname="login.用户登录" name="请求验证码时手机号格式无效" status="error" time="34.298167"><error type="TimeoutError" message="Locator.is_enabled: Timeout 30000ms exceeded.&#10;Call log:&#10;  - waiting for locator(&quot;[data-testid=\&quot;get-verification-code-btn\&quot;]&quot;)">
+<testsuite name="login.用户登录" tests="5" errors="5" failures="0" skipped="0" time="14.649496" timestamp="2025-10-25T14:04:54.920719" hostname="SongBo"><testcase classname="login.用户登录" name="请求验证码时手机号格式无效" status="error" time="3.294757"><error type="Error" message="Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:5173/login&#10;Call log:&#10;  - navigating to &quot;http://localhost:5173/login&quot;, waiting until &quot;load&quot;">
 <![CDATA[
-Failing step: 那么 系统不发送验证码 ... error in 30.013s
-Location: features/login.feature:14
+Failing step: 假如 用户在登录页面 ... error in 3.294s
+Location: features/login.feature:12
 Traceback (most recent call last):
   File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\model.py", line 1991, in run
     match.run(runner.context)
@@ -9,28 +9,33 @@ Traceback (most recent call last):
   File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
     self.func(context, *args, **kwargs)
     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "features\steps\login_steps.py", line 165, in step_system_does_not_send_verification_code
-    assert get_code_button.is_enabled(), "获取验证码按钮应该仍然可点击"
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 17142, in is_enabled
-    self._sync(self._impl_obj.is_enabled(timeout=timeout))
-    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "features\steps\login_steps.py", line 50, in step_user_on_login_page
+    context.login_page.navigate_to_login_page()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Project\taobei-app\testing\pages\login_page.py", line 38, in navigate_to_login_page
+    self.page.goto("http://localhost:5173/login", timeout=30000)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9019, in goto
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.goto(
+        ^^^^^^^^^^^^^^^^^^^^
+            url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+    )
+    ^
   File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
     return task.result()
            ~~~~~~~~~~~^^
-  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_locator.py", line 498, in is_enabled
-    return await self._frame.is_enabled(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_page.py", line 556, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
     )
-    ^
-  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 398, in is_enabled
-    return await self._channel.send(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-        "isEnabled", self._timeout, locals_to_params(locals())
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
   File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
     return await self._connection.wrap_api_call(
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -39,20 +44,20 @@ Traceback (most recent call last):
     ^
   File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
     raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
-playwright._impl._errors.TimeoutError: Locator.is_enabled: Timeout 30000ms exceeded.
+playwright._impl._errors.Error: Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:5173/login
 Call log:
-  - waiting for locator("[data-testid=\"get-verification-code-btn\"]")
+  - navigating to "http://localhost:5173/login", waiting until "load"
 
 ]]>
 </error><system-out>
 <![CDATA[
 @scenario.begin
   场景: 请求验证码时手机号格式无效
-    假如 系统已经启动 ... passed in 0.001s
+    假如 系统已经启动 ... passed in 0.000s
     并且 数据库已经初始化 ... passed in 0.000s
-    假如 用户在登录页面 ... passed in 2.195s
-    当 用户在登录页面输入一个无效的手机号"123"并点击"获取验证码" ... passed in 2.089s
-    那么 系统不发送验证码 ... error in 30.013s
+    假如 用户在登录页面 ... error in 3.294s
+    当 用户在登录页面输入一个无效的手机号"123"并点击"获取验证码" ... skipped in 0.000s
+    那么 系统不发送验证码 ... skipped in 0.000s
     并且 页面提示"请输入正确的手机号码" ... skipped in 0.000s
 
 @scenario.end
@@ -67,9 +72,12 @@ Captured stdout:
 
 场景执行完成: 请求验证码时手机号格式无效
 
-系统已启动
-数据库已初始化
-用户输入无效手机号: 123
+系统已经启动
+数据库已经初始化
+导航到登录页面失败: Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:5173/login
+Call log:
+  - navigating to "http://localhost:5173/login", waiting until "load"
+
 
 ]]>
 </system-out><system-err>
@@ -79,10 +87,10 @@ Captured stderr:
 
 
 ]]>
-</system-err></testcase><testcase classname="login.用户登录" name="成功获取验证码" status="error" time="4.239382"><error type="AttributeError" message="'Context' object has no attribute 'register_page'">
+</system-err></testcase><testcase classname="login.用户登录" name="成功获取验证码" status="error" time="2.826735"><error type="Error" message="Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:5173/login&#10;Call log:&#10;  - navigating to &quot;http://localhost:5173/login&quot;, waiting until &quot;load&quot;">
 <![CDATA[
-Failing step: 并且 "获取验证码"按钮进入60秒倒计时且不可点击 ... error in 0.001s
-Location: features/login.feature:21
+Failing step: 假如 用户在登录页面 ... error in 2.827s
+Location: features/login.feature:18
 Traceback (most recent call last):
   File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\model.py", line 1991, in run
     match.run(runner.context)
@@ -90,12 +98,45 @@ Traceback (most recent call last):
   File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
     self.func(context, *args, **kwargs)
     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "features\steps\register_steps.py", line 207, in step_get_code_button_countdown_register
-    is_disabled = context.register_page.is_get_code_button_disabled()
-                  ^^^^^^^^^^^^^^^^^^^^^
-  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\runner.py", line 430, in __getattr__
-    raise AttributeError(msg)
-AttributeError: 'Context' object has no attribute 'register_page'
+  File "features\steps\login_steps.py", line 50, in step_user_on_login_page
+    context.login_page.navigate_to_login_page()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Project\taobei-app\testing\pages\login_page.py", line 38, in navigate_to_login_page
+    self.page.goto("http://localhost:5173/login", timeout=30000)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9019, in goto
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.goto(
+        ^^^^^^^^^^^^^^^^^^^^
+            url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+    )
+    ^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_page.py", line 556, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:5173/login
+Call log:
+  - navigating to "http://localhost:5173/login", waiting until "load"
+
 ]]>
 </error><system-out>
 <![CDATA[
@@ -103,10 +144,10 @@ AttributeError: 'Context' object has no attribute 'register_page'
   场景: 成功获取验证码
     假如 系统已经启动 ... passed in 0.000s
     并且 数据库已经初始化 ... passed in 0.000s
-    假如 用户在登录页面 ... passed in 2.153s
-    当 用户在登录页面输入一个格式正确的手机号"13800138000"并点击"获取验证码" ... passed in 2.084s
-    那么 系统为该手机号生成一个6位验证码并打印在控制台 ... passed in 0.000s
-    并且 "获取验证码"按钮进入60秒倒计时且不可点击 ... error in 0.001s
+    假如 用户在登录页面 ... error in 2.827s
+    当 用户在登录页面输入一个格式正确的手机号"13800138000"并点击"获取验证码" ... skipped in 0.000s
+    那么 系统为该手机号生成一个6位验证码并打印在控制台 ... skipped in 0.000s
+    并且 "获取验证码"按钮进入60秒倒计时且不可点击 ... skipped in 0.000s
     并且 数据库记录手机号和验证码，有效期为60秒 ... skipped in 0.000s
 
 @scenario.end
@@ -121,10 +162,12 @@ Captured stdout:
 
 场景执行完成: 成功获取验证码
 
-系统已启动
-数据库已初始化
-用户输入有效手机号: 13800138000，已创建验证码: 123456
-生成验证码: 123456
+系统已经启动
+数据库已经初始化
+导航到登录页面失败: Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:5173/login
+Call log:
+  - navigating to "http://localhost:5173/login", waiting until "load"
+
 
 ]]>
 </system-out><system-err>
@@ -134,17 +177,68 @@ Captured stderr:
 
 
 ]]>
-</system-err></testcase><testcase classname="login.用户登录" name="使用未注册的手机号登录" status="passed" time="5.779948"><system-out>
+</system-err></testcase><testcase classname="login.用户登录" name="使用未注册的手机号登录" status="error" time="2.823845"><error type="Error" message="Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:5173/login&#10;Call log:&#10;  - navigating to &quot;http://localhost:5173/login&quot;, waiting until &quot;load&quot;">
+<![CDATA[
+Failing step: 并且 用户在登录页面 ... error in 2.823s
+Location: features/login.feature:26
+Traceback (most recent call last):
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+    match.run(runner.context)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "features\steps\login_steps.py", line 50, in step_user_on_login_page
+    context.login_page.navigate_to_login_page()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Project\taobei-app\testing\pages\login_page.py", line 38, in navigate_to_login_page
+    self.page.goto("http://localhost:5173/login", timeout=30000)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9019, in goto
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.goto(
+        ^^^^^^^^^^^^^^^^^^^^
+            url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+    )
+    ^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_page.py", line 556, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:5173/login
+Call log:
+  - navigating to "http://localhost:5173/login", waiting until "load"
+
+]]>
+</error><system-out>
 <![CDATA[
 @scenario.begin
   场景: 使用未注册的手机号登录
     假如 系统已经启动 ... passed in 0.000s
     并且 数据库已经初始化 ... passed in 0.000s
     假如 一个手机号"13900139000"未被注册 ... passed in 0.001s
-    并且 用户在登录页面 ... passed in 2.152s
-    当 用户使用该未注册的手机号和正确的验证码点击"登录" ... passed in 3.619s
-    那么 系统不让用户登录 ... passed in 0.000s
-    并且 页面提示"该手机号未注册，请先完成注册" ... passed in 0.007s
+    并且 用户在登录页面 ... error in 2.823s
+    当 用户使用该未注册的手机号和正确的验证码点击"登录" ... skipped in 0.000s
+    那么 系统不让用户登录 ... skipped in 0.000s
+    并且 页面提示"该手机号未注册，请先完成注册" ... skipped in 0.000s
 
 @scenario.end
 --------------------------------------------------------------------------------
@@ -158,12 +252,13 @@ Captured stdout:
 
 场景执行完成: 使用未注册的手机号登录
 
-系统已启动
-数据库已初始化
+系统已经启动
+数据库已经初始化
 手机号 13900139000 未被注册
-使用未注册手机号 13900139000 尝试登录，验证码: 123456
-系统阻止了用户登录
-页面显示消息: 该手机号未注册，请先完成注册 (使用选择器: text="该手机号未注册，请先完成注册")
+导航到登录页面失败: Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:5173/login
+Call log:
+  - navigating to "http://localhost:5173/login", waiting until "load"
+
 
 ]]>
 </system-out><system-err>
@@ -173,17 +268,68 @@ Captured stderr:
 
 
 ]]>
-</system-err></testcase><testcase classname="login.用户登录" name="使用错误的验证码登录" status="passed" time="5.781342"><system-out>
+</system-err></testcase><testcase classname="login.用户登录" name="使用错误的验证码登录" status="error" time="2.864333"><error type="Error" message="Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:5173/login&#10;Call log:&#10;  - navigating to &quot;http://localhost:5173/login&quot;, waiting until &quot;load&quot;">
+<![CDATA[
+Failing step: 并且 用户在登录页面 ... error in 2.863s
+Location: features/login.feature:33
+Traceback (most recent call last):
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+    match.run(runner.context)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "features\steps\login_steps.py", line 50, in step_user_on_login_page
+    context.login_page.navigate_to_login_page()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Project\taobei-app\testing\pages\login_page.py", line 38, in navigate_to_login_page
+    self.page.goto("http://localhost:5173/login", timeout=30000)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9019, in goto
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.goto(
+        ^^^^^^^^^^^^^^^^^^^^
+            url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+    )
+    ^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_page.py", line 556, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:5173/login
+Call log:
+  - navigating to "http://localhost:5173/login", waiting until "load"
+
+]]>
+</error><system-out>
 <![CDATA[
 @scenario.begin
   场景: 使用错误的验证码登录
     假如 系统已经启动 ... passed in 0.000s
     并且 数据库已经初始化 ... passed in 0.000s
     假如 一个手机号"13800138000"已被注册 ... passed in 0.001s
-    并且 用户在登录页面 ... passed in 2.135s
-    当 用户使用该手机号和错误的验证码"000000"点击"登录" ... passed in 3.638s
-    那么 系统不让用户登录 ... passed in 0.000s
-    并且 页面提示"验证码错误" ... passed in 0.007s
+    并且 用户在登录页面 ... error in 2.863s
+    当 用户使用该手机号和错误的验证码"000000"点击"登录" ... skipped in 0.000s
+    那么 系统不让用户登录 ... skipped in 0.000s
+    并且 页面提示"验证码错误" ... skipped in 0.000s
 
 @scenario.end
 --------------------------------------------------------------------------------
@@ -197,12 +343,13 @@ Captured stdout:
 
 场景执行完成: 使用错误的验证码登录
 
-系统已启动
-数据库已初始化
+系统已经启动
+数据库已经初始化
 手机号 13800138000 已被注册
-使用手机号 13800138000 和错误验证码 000000 尝试登录
-系统阻止了用户登录
-页面显示消息: 验证码错误 (使用选择器: text="验证码错误")
+导航到登录页面失败: Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:5173/login
+Call log:
+  - navigating to "http://localhost:5173/login", waiting until "load"
+
 
 ]]>
 </system-out><system-err>
@@ -212,18 +359,69 @@ Captured stderr:
 
 
 ]]>
-</system-err></testcase><testcase classname="login.用户登录" name="成功登录" status="passed" time="12.779219"><system-out>
+</system-err></testcase><testcase classname="login.用户登录" name="成功登录" status="error" time="2.839825"><error type="Error" message="Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:5173/login&#10;Call log:&#10;  - navigating to &quot;http://localhost:5173/login&quot;, waiting until &quot;load&quot;">
+<![CDATA[
+Failing step: 并且 用户在登录页面 ... error in 2.838s
+Location: features/login.feature:40
+Traceback (most recent call last):
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+    match.run(runner.context)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "features\steps\login_steps.py", line 50, in step_user_on_login_page
+    context.login_page.navigate_to_login_page()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Project\taobei-app\testing\pages\login_page.py", line 38, in navigate_to_login_page
+    self.page.goto("http://localhost:5173/login", timeout=30000)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9019, in goto
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.goto(
+        ^^^^^^^^^^^^^^^^^^^^
+            url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+    )
+    ^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_page.py", line 556, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:5173/login
+Call log:
+  - navigating to "http://localhost:5173/login", waiting until "load"
+
+]]>
+</error><system-out>
 <![CDATA[
 @scenario.begin
   场景: 成功登录
     假如 系统已经启动 ... passed in 0.000s
     并且 数据库已经初始化 ... passed in 0.000s
     假如 一个手机号"13800138000"已被注册 ... passed in 0.001s
-    并且 用户在登录页面 ... passed in 2.137s
-    当 用户使用该手机号和正确的验证码点击"登录" ... passed in 3.622s
-    那么 系统验证成功 ... passed in 2.012s
-    并且 页面提示"登录成功" ... passed in 2.006s
-    并且 页面自动跳转到首页 ... passed in 3.000s
+    并且 用户在登录页面 ... error in 2.838s
+    当 用户使用该手机号和正确的验证码点击"登录" ... skipped in 0.000s
+    那么 系统验证成功 ... skipped in 0.000s
+    并且 页面提示"登录成功" ... skipped in 0.000s
+    并且 页面自动跳转到首页 ... skipped in 0.000s
 
 @scenario.end
 --------------------------------------------------------------------------------
@@ -237,15 +435,13 @@ Captured stdout:
 
 场景执行完成: 成功登录
 
-系统已启动
-数据库已初始化
+系统已经启动
+数据库已经初始化
 手机号 13800138000 已被注册
-使用手机号 13800138000 和正确验证码 123456 登录
-系统验证成功
-未检测到JavaScript弹窗，尝试其他方式验证登录成功
-通过localStorage验证登录成功: token=eyJhbGciOiJIUzI1NiIs..., user={"id":197,"phoneNumber":"13800138000","nickname":"...
-当前页面URL: http://localhost:5173/home
-页面成功跳转到首页
+导航到登录页面失败: Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:5173/login
+Call log:
+  - navigating to "http://localhost:5173/login", waiting until "load"
+
 
 ]]>
 </system-out><system-err>

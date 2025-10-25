@@ -1,0 +1,745 @@
+<testsuite name="user_management.用户管理" tests="21" errors="21" failures="0" skipped="0" time="0.0" timestamp="2025-10-25T14:05:04.122826" hostname="SongBo"><testcase classname="user_management.用户管理" name="成功更新用户信息 -- @1.1 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/user_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 成功更新用户信息 -- @1.1 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    假设 用户已登录 ... undefined in 0.000s
+    当 用户提交有效的个人信息更新请求，昵称为 "小明"，头像为 "https://example.com/avatar1.jpg" ... undefined in 0.000s
+    那么 系统更新用户信息并返回成功响应 ... undefined in 0.000s
+    并且 返回更新后的用户信息 ... undefined in 0.000s
+    并且 用户信息页面显示更新后的昵称 "小明" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 成功更新用户信息 -- @1.1 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 成功更新用户信息 -- @1.1 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="user_management.用户管理" name="成功更新用户信息 -- @1.2 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/user_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 成功更新用户信息 -- @1.2 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    假设 用户已登录 ... undefined in 0.000s
+    当 用户提交有效的个人信息更新请求，昵称为 "测试用户"，头像为 "https://example.com/avatar2.jpg" ... undefined in 0.000s
+    那么 系统更新用户信息并返回成功响应 ... undefined in 0.000s
+    并且 返回更新后的用户信息 ... undefined in 0.000s
+    并且 用户信息页面显示更新后的昵称 "测试用户" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 成功更新用户信息 -- @1.2 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 成功更新用户信息 -- @1.2 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="user_management.用户管理" name="成功更新用户信息 -- @1.3 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/user_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 成功更新用户信息 -- @1.3 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    假设 用户已登录 ... undefined in 0.000s
+    当 用户提交有效的个人信息更新请求，昵称为 "新昵称"，头像为 "https://example.com/avatar3.jpg" ... undefined in 0.000s
+    那么 系统更新用户信息并返回成功响应 ... undefined in 0.000s
+    并且 返回更新后的用户信息 ... undefined in 0.000s
+    并且 用户信息页面显示更新后的昵称 "新昵称" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 成功更新用户信息 -- @1.3 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 成功更新用户信息 -- @1.3 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="user_management.用户管理" name="更新用户信息 - 只更新昵称" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/user_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 更新用户信息 - 只更新昵称
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    假设 用户已登录 ... undefined in 0.000s
+    当 用户提交有效的个人信息更新请求，昵称为 "更新的昵称" ... undefined in 0.000s
+    那么 系统更新用户信息并返回成功响应 ... undefined in 0.000s
+    并且 返回更新后的用户信息 ... undefined in 0.000s
+    并且 用户信息页面显示更新后的昵称 "更新的昵称" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 更新用户信息 - 只更新昵称
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 更新用户信息 - 只更新昵称
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="user_management.用户管理" name="更新用户信息 - 只更新头像" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/user_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 更新用户信息 - 只更新头像
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    假设 用户已登录 ... undefined in 0.000s
+    当 用户提交有效的个人信息更新请求，头像为 "https://example.com/new-avatar.jpg" ... undefined in 0.000s
+    那么 系统更新用户信息并返回成功响应 ... undefined in 0.000s
+    并且 返回更新后的用户信息 ... undefined in 0.000s
+    并且 用户信息页面显示更新后的头像 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 更新用户信息 - 只更新头像
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 更新用户信息 - 只更新头像
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="user_management.用户管理" name="提交无效的用户信息 - 昵称验证失败 -- @1.1 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/user_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 提交无效的用户信息 - 昵称验证失败 -- @1.1 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    假设 用户已登录 ... undefined in 0.000s
+    当 用户提交包含无效昵称 "" 的更新请求 ... undefined in 0.000s
+    那么 系统返回400错误并提示具体的验证失败信息 ... undefined in 0.000s
+    并且 错误信息包含 "昵称长度必须在1-50个字符之间" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 提交无效的用户信息 - 昵称验证失败 -- @1.1 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 提交无效的用户信息 - 昵称验证失败 -- @1.1 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="user_management.用户管理" name="提交无效的用户信息 - 昵称验证失败 -- @1.2 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/user_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 提交无效的用户信息 - 昵称验证失败 -- @1.2 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    假设 用户已登录 ... undefined in 0.000s
+    当 用户提交包含无效昵称 "这是一个非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的昵称" 的更新请求 ... undefined in 0.000s
+    那么 系统返回400错误并提示具体的验证失败信息 ... undefined in 0.000s
+    并且 错误信息包含 "昵称长度必须在1-50个字符之间" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 提交无效的用户信息 - 昵称验证失败 -- @1.2 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 提交无效的用户信息 - 昵称验证失败 -- @1.2 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="user_management.用户管理" name="提交无效的用户信息 - 头像URL验证失败 -- @1.1 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/user_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 提交无效的用户信息 - 头像URL验证失败 -- @1.1 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    假设 用户已登录 ... undefined in 0.000s
+    当 用户提交包含无效头像URL "invalid-url" 的更新请求 ... undefined in 0.000s
+    那么 系统返回400错误并提示具体的验证失败信息 ... undefined in 0.000s
+    并且 错误信息包含 "头像必须是有效的URL地址" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 提交无效的用户信息 - 头像URL验证失败 -- @1.1 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 提交无效的用户信息 - 头像URL验证失败 -- @1.1 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="user_management.用户管理" name="提交无效的用户信息 - 头像URL验证失败 -- @1.2 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/user_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 提交无效的用户信息 - 头像URL验证失败 -- @1.2 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    假设 用户已登录 ... undefined in 0.000s
+    当 用户提交包含无效头像URL "not-a-url" 的更新请求 ... undefined in 0.000s
+    那么 系统返回400错误并提示具体的验证失败信息 ... undefined in 0.000s
+    并且 错误信息包含 "头像必须是有效的URL地址" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 提交无效的用户信息 - 头像URL验证失败 -- @1.2 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 提交无效的用户信息 - 头像URL验证失败 -- @1.2 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="user_management.用户管理" name="提交无效的用户信息 - 头像URL验证失败 -- @1.3 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/user_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 提交无效的用户信息 - 头像URL验证失败 -- @1.3 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    假设 用户已登录 ... undefined in 0.000s
+    当 用户提交包含无效头像URL "ftp://invalid" 的更新请求 ... undefined in 0.000s
+    那么 系统返回400错误并提示具体的验证失败信息 ... undefined in 0.000s
+    并且 错误信息包含 "头像必须是有效的URL地址" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 提交无效的用户信息 - 头像URL验证失败 -- @1.3 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 提交无效的用户信息 - 头像URL验证失败 -- @1.3 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="user_management.用户管理" name="提交无效的用户信息 - 空的更新请求" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/user_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 提交无效的用户信息 - 空的更新请求
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    假设 用户已登录 ... undefined in 0.000s
+    当 用户提交空的个人信息更新请求 ... undefined in 0.000s
+    那么 系统返回400错误并提示具体的验证失败信息 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 提交无效的用户信息 - 空的更新请求
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 提交无效的用户信息 - 空的更新请求
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="user_management.用户管理" name="成功注销" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/user_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 成功注销
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    假设 用户已登录 ... undefined in 0.000s
+    当 用户发起注销请求 ... undefined in 0.000s
+    那么 系统清除用户的登录状态 ... undefined in 0.000s
+    并且 返回注销成功响应 ... undefined in 0.000s
+    并且 用户被重定向到登录页面 ... undefined in 0.000s
+    并且 用户无法访问需要登录的页面 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 成功注销
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 成功注销
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="user_management.用户管理" name="注销后再次访问需要登录的页面" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/user_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 注销后再次访问需要登录的页面
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    假设 用户已登录 ... undefined in 0.000s
+    并且 用户已成功注销 ... undefined in 0.000s
+    当 用户尝试访问用户信息页面 ... undefined in 0.000s
+    那么 用户被重定向到登录页面 ... undefined in 0.000s
+    并且 页面显示 "请先登录" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 注销后再次访问需要登录的页面
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 注销后再次访问需要登录的页面
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="user_management.用户管理" name="未登录用户尝试更新信息" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/user_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 未登录用户尝试更新信息
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    假设 用户未登录 ... undefined in 0.000s
+    当 用户尝试提交个人信息更新请求 ... undefined in 0.000s
+    那么 系统返回401错误 ... undefined in 0.000s
+    并且 错误信息包含 "未授权访问" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 未登录用户尝试更新信息
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 未登录用户尝试更新信息
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="user_management.用户管理" name="未登录用户尝试注销" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/user_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 未登录用户尝试注销
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    假设 用户未登录 ... undefined in 0.000s
+    当 用户尝试发起注销请求 ... undefined in 0.000s
+    那么 系统返回401错误 ... undefined in 0.000s
+    并且 错误信息包含 "未授权访问" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 未登录用户尝试注销
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 未登录用户尝试注销
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="user_management.用户管理" name="API - 成功获取用户信息" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/user_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: API - 成功获取用户信息
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    假设 用户通过API已登录 ... undefined in 0.000s
+    当 我通过API请求获取用户信息 ... undefined in 0.000s
+    那么 API返回状态码200 ... undefined in 0.000s
+    并且 API响应包含用户信息 ... undefined in 0.000s
+    并且 用户信息包含手机号、昵称、头像等字段 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: API - 成功获取用户信息
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: API - 成功获取用户信息
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="user_management.用户管理" name="API - 成功更新用户信息" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/user_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: API - 成功更新用户信息
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    假设 用户通过API已登录 ... undefined in 0.000s
+    当 我通过API更新用户信息，昵称为 "API测试昵称"，头像为 "https://example.com/api-avatar.jpg" ... undefined in 0.000s
+    那么 API返回状态码200 ... undefined in 0.000s
+    并且 API响应包含更新成功的消息 ... undefined in 0.000s
+    并且 API响应包含更新后的用户信息 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: API - 成功更新用户信息
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: API - 成功更新用户信息
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="user_management.用户管理" name="API - 更新用户信息验证失败" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/user_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: API - 更新用户信息验证失败
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    假设 用户通过API已登录 ... undefined in 0.000s
+    当 我通过API提交包含无效昵称的更新请求 ... undefined in 0.000s
+    那么 API返回状态码400 ... undefined in 0.000s
+    并且 API响应包含验证失败的错误信息 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: API - 更新用户信息验证失败
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: API - 更新用户信息验证失败
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="user_management.用户管理" name="API - 成功注销" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/user_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: API - 成功注销
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    假设 用户通过API已登录 ... undefined in 0.000s
+    当 我通过API发起注销请求 ... undefined in 0.000s
+    那么 API返回状态码200 ... undefined in 0.000s
+    并且 API响应包含注销成功的消息 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: API - 成功注销
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: API - 成功注销
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="user_management.用户管理" name="API - 未授权访问用户信息" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/user_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: API - 未授权访问用户信息
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    假设 用户未通过API登录 ... undefined in 0.000s
+    当 我通过API请求获取用户信息 ... undefined in 0.000s
+    那么 API返回状态码401 ... undefined in 0.000s
+    并且 API响应包含未授权的错误信息 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: API - 未授权访问用户信息
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: API - 未授权访问用户信息
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="user_management.用户管理" name="API - 使用无效token访问用户信息" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/user_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: API - 使用无效token访问用户信息
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    假设 我使用无效的token ... undefined in 0.000s
+    当 我通过API请求获取用户信息 ... undefined in 0.000s
+    那么 API返回状态码401 ... undefined in 0.000s
+    并且 API响应包含token无效的错误信息 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: API - 使用无效token访问用户信息
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: API - 使用无效token访问用户信息
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase></testsuite>

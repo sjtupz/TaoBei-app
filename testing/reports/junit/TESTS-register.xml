@@ -1,0 +1,257 @@
+<testsuite name="register.用户注册" tests="5" errors="5" failures="0" skipped="0" time="0.010934" timestamp="2025-10-25T14:05:01.375812" hostname="SongBo"><testcase classname="register.用户注册" name="请求验证码时手机号格式无效" status="error" time="0.002062"><error type="AttributeError" message="'RegisterPage' object has no attribute 'navigate_to_register'">
+<![CDATA[
+Failing step: 假如 用户在注册页面 ... error in 0.002s
+Location: features/register.feature:12
+Traceback (most recent call last):
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+    match.run(runner.context)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "features\steps\register_steps.py", line 16, in step_user_on_register_page
+    context.register_page.navigate_to_register()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RegisterPage' object has no attribute 'navigate_to_register'. Did you mean: 'navigate_to_register_page'?
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 请求验证码时手机号格式无效
+    假如 系统已经启动 ... passed in 0.000s
+    并且 数据库已经初始化 ... passed in 0.000s
+    假如 用户在注册页面 ... error in 0.002s
+    当 用户输入一个无效的手机号"123"并点击"获取验证码" ... skipped in 0.000s
+    那么 系统不发送验证码 ... skipped in 0.000s
+    并且 页面提示"请输入正确的手机号码" ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 请求验证码时手机号格式无效
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 请求验证码时手机号格式无效
+
+系统已经启动
+数据库已经初始化
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="register.用户注册" name="成功获取验证码" status="error" time="0.001838"><error type="AttributeError" message="'RegisterPage' object has no attribute 'navigate_to_register'">
+<![CDATA[
+Failing step: 假如 用户在注册页面 ... error in 0.002s
+Location: features/register.feature:18
+Traceback (most recent call last):
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+    match.run(runner.context)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "features\steps\register_steps.py", line 16, in step_user_on_register_page
+    context.register_page.navigate_to_register()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RegisterPage' object has no attribute 'navigate_to_register'. Did you mean: 'navigate_to_register_page'?
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 成功获取验证码
+    假如 系统已经启动 ... passed in 0.000s
+    并且 数据库已经初始化 ... passed in 0.000s
+    假如 用户在注册页面 ... error in 0.002s
+    当 用户输入一个格式正确的手机号"13900139000"并点击"获取验证码" ... skipped in 0.000s
+    那么 系统为该手机号生成一个6位验证码并打印在控制台 ... skipped in 0.000s
+    并且 "获取验证码"按钮进入60秒倒计时且不可点击 ... skipped in 0.000s
+    并且 数据库记录手机号和验证码，有效期为60秒 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 成功获取验证码
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 成功获取验证码
+
+系统已经启动
+数据库已经初始化
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="register.用户注册" name="使用已注册的手机号进行注册" status="error" time="0.002831"><error type="AttributeError" message="'RegisterPage' object has no attribute 'navigate_to_register'">
+<![CDATA[
+Failing step: 并且 用户在注册页面 ... error in 0.002s
+Location: features/register.feature:26
+Traceback (most recent call last):
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+    match.run(runner.context)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "features\steps\register_steps.py", line 16, in step_user_on_register_page
+    context.register_page.navigate_to_register()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RegisterPage' object has no attribute 'navigate_to_register'. Did you mean: 'navigate_to_register_page'?
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 使用已注册的手机号进行注册
+    假如 系统已经启动 ... passed in 0.000s
+    并且 数据库已经初始化 ... passed in 0.000s
+    假如 一个手机号"13800138000"已被注册 ... passed in 0.001s
+    并且 用户在注册页面 ... error in 0.002s
+    当 用户使用该手机号和正确的验证码点击"注册" ... skipped in 0.000s
+    那么 系统不创建新用户 ... skipped in 0.000s
+    并且 页面提示"该手机号已注册，将直接为您登录" ... skipped in 0.000s
+    并且 用户成功登录并跳转到首页 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 使用已注册的手机号进行注册
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 使用已注册的手机号进行注册
+
+系统已经启动
+数据库已经初始化
+手机号 13800138000 已被注册
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="register.用户注册" name="未同意用户协议时注册按钮的状态" status="error" time="0.002217"><error type="AttributeError" message="'RegisterPage' object has no attribute 'navigate_to_register'">
+<![CDATA[
+Failing step: 假如 用户在注册页面输入了手机号和验证码 ... error in 0.002s
+Location: features/register.feature:33
+Traceback (most recent call last):
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+    match.run(runner.context)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "features\steps\register_steps.py", line 24, in step_user_entered_phone_and_code
+    context.register_page.navigate_to_register()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RegisterPage' object has no attribute 'navigate_to_register'. Did you mean: 'navigate_to_register_page'?
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 未同意用户协议时注册按钮的状态
+    假如 系统已经启动 ... passed in 0.000s
+    并且 数据库已经初始化 ... passed in 0.000s
+    假如 用户在注册页面输入了手机号和验证码 ... error in 0.002s
+    当 用户未勾选"同意《淘贝用户协议》"复选框 ... skipped in 0.000s
+    那么 "注册"按钮为不可点击状态 ... skipped in 0.000s
+    当 用户勾选"同意《淘贝用户协议》"复选框 ... skipped in 0.000s
+    那么 "注册"按钮变为可点击状态 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 未同意用户协议时注册按钮的状态
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 未同意用户协议时注册按钮的状态
+
+系统已经启动
+数据库已经初始化
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase><testcase classname="register.用户注册" name="成功注册" status="error" time="0.001986"><error type="AttributeError" message="'RegisterPage' object has no attribute 'navigate_to_register'">
+<![CDATA[
+Failing step: 假如 用户在注册页面 ... error in 0.002s
+Location: features/register.feature:40
+Traceback (most recent call last):
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+    match.run(runner.context)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\Project\taobei-app\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+    self.func(context, *args, **kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "features\steps\register_steps.py", line 16, in step_user_on_register_page
+    context.register_page.navigate_to_register()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RegisterPage' object has no attribute 'navigate_to_register'. Did you mean: 'navigate_to_register_page'?
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 成功注册
+    假如 系统已经启动 ... passed in 0.000s
+    并且 数据库已经初始化 ... passed in 0.000s
+    假如 用户在注册页面 ... error in 0.002s
+    当 用户输入未注册的手机号"13700137000"和正确的验证码，勾选协议并点击"注册" ... skipped in 0.000s
+    那么 系统在数据库中创建新用户 ... skipped in 0.000s
+    并且 页面提示"注册成功" ... skipped in 0.000s
+    并且 用户成功登录并自动跳转到首页 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 成功注册
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 成功注册
+
+系统已经启动
+数据库已经初始化
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase></testsuite>

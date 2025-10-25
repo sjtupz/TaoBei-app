@@ -20,15 +20,22 @@ const sendCodeLimiter = rateLimit({
     legacyHeaders: false,
 });
 
-// API-POST-SendVerificationCode: 发送验证码到指定手机号
+// API-POST-SendVerificationCode: 发送验证码
 router.post('/send-verification-code', 
     sendCodeLimiter,
     [
-        body('phoneNumber')
-            .notEmpty()
-            .withMessage('手机号不能为空')
+        body('phone')
+            .optional()
             .custom((value) => {
-                if (!validatePhoneNumber(value)) {
+                if (value && !validatePhoneNumber(value)) {
+                    throw new Error('请输入正确的手机号码');
+                }
+                return true;
+            }),
+        body('phoneNumber')
+            .optional()
+            .custom((value) => {
+                if (value && !validatePhoneNumber(value)) {
                     throw new Error('请输入正确的手机号码');
                 }
                 return true;
@@ -36,6 +43,15 @@ router.post('/send-verification-code',
     ],
     async (req, res) => {
         try {
+            // 支持两种参数格式
+            const phoneNumber = req.body.phone || req.body.phoneNumber;
+            
+            if (!phoneNumber) {
+                return res.status(400).json({ 
+                    error: '手机号不能为空' 
+                });
+            }
+
             // 验证请求参数
             const errors = validationResult(req);
             if (!errors.isEmpty()) {
@@ -43,8 +59,6 @@ router.post('/send-verification-code',
                     error: errors.array()[0].msg 
                 });
             }
-
-            const { phoneNumber } = req.body;
 
             // 检查发送频率限制
             const isRateLimited = await verificationCodeDAO.checkRateLimit(phoneNumber, 60);
@@ -152,23 +166,49 @@ router.post('/password-login',
 // API-POST-Login: 短信验证码登录
 router.post('/login',
     [
-        body('phoneNumber')
-            .notEmpty()
-            .withMessage('手机号不能为空')
+        body('phone')
+            .optional()
             .custom((value) => {
-                if (!validatePhoneNumber(value)) {
+                if (value && !validatePhoneNumber(value)) {
                     throw new Error('请输入正确的手机号码');
                 }
                 return true;
             }),
+        body('phoneNumber')
+            .optional()
+            .custom((value) => {
+                if (value && !validatePhoneNumber(value)) {
+                    throw new Error('请输入正确的手机号码');
+                }
+                return true;
+            }),
+        body('code')
+            .optional()
+            .isLength({ min: 6, max: 6 })
+            .withMessage('验证码必须是6位数字'),
         body('verificationCode')
-            .notEmpty()
-            .withMessage('验证码不能为空')
+            .optional()
             .isLength({ min: 6, max: 6 })
             .withMessage('验证码必须是6位数字')
     ],
     async (req, res) => {
         try {
+            // 支持两种参数格式
+            const phoneNumber = req.body.phone || req.body.phoneNumber;
+            const verificationCode = req.body.code || req.body.verificationCode;
+            
+            if (!phoneNumber) {
+                return res.status(400).json({ 
+                    error: '手机号不能为空' 
+                });
+            }
+            
+            if (!verificationCode) {
+                return res.status(400).json({ 
+                    error: '验证码不能为空' 
+                });
+            }
+
             // 验证请求参数
             const errors = validationResult(req);
             if (!errors.isEmpty()) {
@@ -176,8 +216,6 @@ router.post('/login',
                     error: errors.array()[0].msg 
                 });
             }
-
-            const { phoneNumber, verificationCode } = req.body;
 
             // 验证验证码
             const codeVerification = await verificationCodeDAO.verifyCode(phoneNumber, verificationCode);
@@ -222,18 +260,28 @@ router.post('/login',
 // API-POST-Register: 用户注册
 router.post('/register',
     [
-        body('phoneNumber')
-            .notEmpty()
-            .withMessage('手机号不能为空')
+        body('phone')
+            .optional()
             .custom((value) => {
-                if (!validatePhoneNumber(value)) {
+                if (value && !validatePhoneNumber(value)) {
                     throw new Error('请输入正确的手机号码');
                 }
                 return true;
             }),
+        body('phoneNumber')
+            .optional()
+            .custom((value) => {
+                if (value && !validatePhoneNumber(value)) {
+                    throw new Error('请输入正确的手机号码');
+                }
+                return true;
+            }),
+        body('code')
+            .optional()
+            .isLength({ min: 6, max: 6 })
+            .withMessage('验证码必须是6位数字'),
         body('verificationCode')
-            .notEmpty()
-            .withMessage('验证码不能为空')
+            .optional()
             .isLength({ min: 6, max: 6 })
             .withMessage('验证码必须是6位数字'),
         body('agreeToTerms')
@@ -242,6 +290,22 @@ router.post('/register',
     ],
     async (req, res) => {
         try {
+            // 支持两种参数格式
+            const phoneNumber = req.body.phone || req.body.phoneNumber;
+            const verificationCode = req.body.code || req.body.verificationCode;
+            
+            if (!phoneNumber) {
+                return res.status(400).json({ 
+                    error: '手机号不能为空' 
+                });
+            }
+            
+            if (!verificationCode) {
+                return res.status(400).json({ 
+                    error: '验证码不能为空' 
+                });
+            }
+
             // 验证请求参数
             const errors = validationResult(req);
             if (!errors.isEmpty()) {
@@ -249,8 +313,6 @@ router.post('/register',
                     error: errors.array()[0].msg 
                 });
             }
-
-            const { phoneNumber, verificationCode, agreeToTerms } = req.body;
 
             // 验证验证码
             const codeVerification = await verificationCodeDAO.verifyCode(phoneNumber, verificationCode);

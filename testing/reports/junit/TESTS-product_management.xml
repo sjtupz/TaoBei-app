@@ -1,0 +1,1475 @@
+<testsuite name="product_management.商品管理" tests="40" errors="40" failures="0" skipped="0" time="0.0" timestamp="2025-10-25T14:05:00.731906" hostname="SongBo"><testcase classname="product_management.商品管理" name="成功获取商品列表 - 默认参数" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 成功获取商品列表 - 默认参数
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户请求商品列表 ... undefined in 0.000s
+    那么 系统返回分页的商品列表 ... undefined in 0.000s
+    并且 包含商品的基本信息（ID、名称、价格、图片等） ... undefined in 0.000s
+    并且 商品列表页面显示商品信息 ... undefined in 0.000s
+    并且 显示分页控件 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 成功获取商品列表 - 默认参数
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 成功获取商品列表 - 默认参数
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="成功获取商品列表 - 自定义分页参数 -- @1.1 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 成功获取商品列表 - 自定义分页参数 -- @1.1 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户请求商品列表，页码为 1，每页数量为 10 ... undefined in 0.000s
+    那么 系统返回分页的商品列表 ... undefined in 0.000s
+    并且 包含商品的基本信息（ID、名称、价格、图片等） ... undefined in 0.000s
+    并且 返回的商品数量不超过 10 ... undefined in 0.000s
+    并且 商品列表页面显示第 1 页的商品 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 成功获取商品列表 - 自定义分页参数 -- @1.1 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 成功获取商品列表 - 自定义分页参数 -- @1.1 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="成功获取商品列表 - 自定义分页参数 -- @1.2 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 成功获取商品列表 - 自定义分页参数 -- @1.2 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户请求商品列表，页码为 2，每页数量为 5 ... undefined in 0.000s
+    那么 系统返回分页的商品列表 ... undefined in 0.000s
+    并且 包含商品的基本信息（ID、名称、价格、图片等） ... undefined in 0.000s
+    并且 返回的商品数量不超过 5 ... undefined in 0.000s
+    并且 商品列表页面显示第 2 页的商品 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 成功获取商品列表 - 自定义分页参数 -- @1.2 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 成功获取商品列表 - 自定义分页参数 -- @1.2 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="成功获取商品列表 - 自定义分页参数 -- @1.3 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 成功获取商品列表 - 自定义分页参数 -- @1.3 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户请求商品列表，页码为 1，每页数量为 20 ... undefined in 0.000s
+    那么 系统返回分页的商品列表 ... undefined in 0.000s
+    并且 包含商品的基本信息（ID、名称、价格、图片等） ... undefined in 0.000s
+    并且 返回的商品数量不超过 20 ... undefined in 0.000s
+    并且 商品列表页面显示第 1 页的商品 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 成功获取商品列表 - 自定义分页参数 -- @1.3 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 成功获取商品列表 - 自定义分页参数 -- @1.3 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="成功获取商品列表 - 自定义分页参数 -- @1.4 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 成功获取商品列表 - 自定义分页参数 -- @1.4 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户请求商品列表，页码为 3，每页数量为 8 ... undefined in 0.000s
+    那么 系统返回分页的商品列表 ... undefined in 0.000s
+    并且 包含商品的基本信息（ID、名称、价格、图片等） ... undefined in 0.000s
+    并且 返回的商品数量不超过 8 ... undefined in 0.000s
+    并且 商品列表页面显示第 3 页的商品 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 成功获取商品列表 - 自定义分页参数 -- @1.4 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 成功获取商品列表 - 自定义分页参数 -- @1.4 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="商品列表分页参数验证 -- @1.1 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 商品列表分页参数验证 -- @1.1 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户请求商品列表，页码为 0，每页数量为 10 ... undefined in 0.000s
+    那么 系统返回400错误 ... undefined in 0.000s
+    并且 错误信息包含 "页码必须是大于0的整数" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 商品列表分页参数验证 -- @1.1 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 商品列表分页参数验证 -- @1.1 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="商品列表分页参数验证 -- @1.2 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 商品列表分页参数验证 -- @1.2 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户请求商品列表，页码为 -1，每页数量为 10 ... undefined in 0.000s
+    那么 系统返回400错误 ... undefined in 0.000s
+    并且 错误信息包含 "页码必须是大于0的整数" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 商品列表分页参数验证 -- @1.2 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 商品列表分页参数验证 -- @1.2 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="商品列表分页参数验证 -- @1.3 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 商品列表分页参数验证 -- @1.3 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户请求商品列表，页码为 1，每页数量为 0 ... undefined in 0.000s
+    那么 系统返回400错误 ... undefined in 0.000s
+    并且 错误信息包含 "每页数量必须是1-100之间的整数" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 商品列表分页参数验证 -- @1.3 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 商品列表分页参数验证 -- @1.3 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="商品列表分页参数验证 -- @1.4 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 商品列表分页参数验证 -- @1.4 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户请求商品列表，页码为 1，每页数量为 101 ... undefined in 0.000s
+    那么 系统返回400错误 ... undefined in 0.000s
+    并且 错误信息包含 "每页数量必须是1-100之间的整数" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 商品列表分页参数验证 -- @1.4 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 商品列表分页参数验证 -- @1.4 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="根据关键词搜索商品 -- @1.1 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 根据关键词搜索商品 -- @1.1 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户输入搜索关键词 "手机" ... undefined in 0.000s
+    那么 系统返回匹配的商品列表 ... undefined in 0.000s
+    并且 商品列表页面显示搜索结果 ... undefined in 0.000s
+    并且 搜索结果中的商品名称包含关键词 "手机" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 根据关键词搜索商品 -- @1.1 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 根据关键词搜索商品 -- @1.1 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="根据关键词搜索商品 -- @1.2 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 根据关键词搜索商品 -- @1.2 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户输入搜索关键词 "苹果" ... undefined in 0.000s
+    那么 系统返回匹配的商品列表 ... undefined in 0.000s
+    并且 商品列表页面显示搜索结果 ... undefined in 0.000s
+    并且 搜索结果中的商品名称包含关键词 "苹果" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 根据关键词搜索商品 -- @1.2 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 根据关键词搜索商品 -- @1.2 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="根据关键词搜索商品 -- @1.3 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 根据关键词搜索商品 -- @1.3 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户输入搜索关键词 "iPhone" ... undefined in 0.000s
+    那么 系统返回匹配的商品列表 ... undefined in 0.000s
+    并且 商品列表页面显示搜索结果 ... undefined in 0.000s
+    并且 搜索结果中的商品名称包含关键词 "iPhone" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 根据关键词搜索商品 -- @1.3 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 根据关键词搜索商品 -- @1.3 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="根据关键词搜索商品 -- @1.4 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 根据关键词搜索商品 -- @1.4 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户输入搜索关键词 "电脑" ... undefined in 0.000s
+    那么 系统返回匹配的商品列表 ... undefined in 0.000s
+    并且 商品列表页面显示搜索结果 ... undefined in 0.000s
+    并且 搜索结果中的商品名称包含关键词 "电脑" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 根据关键词搜索商品 -- @1.4 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 根据关键词搜索商品 -- @1.4 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="搜索不存在的商品" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 搜索不存在的商品
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户输入搜索关键词 "不存在的商品xyz123" ... undefined in 0.000s
+    那么 系统返回空的商品列表 ... undefined in 0.000s
+    并且 商品列表页面显示 "暂无相关商品" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 搜索不存在的商品
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 搜索不存在的商品
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="按分类筛选商品 -- @1.1 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 按分类筛选商品 -- @1.1 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户选择分类 "电子产品" 筛选商品 ... undefined in 0.000s
+    那么 系统返回该分类下的商品列表 ... undefined in 0.000s
+    并且 商品列表页面显示分类筛选结果 ... undefined in 0.000s
+    并且 返回的商品都属于分类 "电子产品" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 按分类筛选商品 -- @1.1 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 按分类筛选商品 -- @1.1 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="按分类筛选商品 -- @1.2 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 按分类筛选商品 -- @1.2 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户选择分类 "服装" 筛选商品 ... undefined in 0.000s
+    那么 系统返回该分类下的商品列表 ... undefined in 0.000s
+    并且 商品列表页面显示分类筛选结果 ... undefined in 0.000s
+    并且 返回的商品都属于分类 "服装" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 按分类筛选商品 -- @1.2 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 按分类筛选商品 -- @1.2 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="按分类筛选商品 -- @1.3 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 按分类筛选商品 -- @1.3 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户选择分类 "家居用品" 筛选商品 ... undefined in 0.000s
+    那么 系统返回该分类下的商品列表 ... undefined in 0.000s
+    并且 商品列表页面显示分类筛选结果 ... undefined in 0.000s
+    并且 返回的商品都属于分类 "家居用品" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 按分类筛选商品 -- @1.3 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 按分类筛选商品 -- @1.3 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="按分类筛选商品 -- @1.4 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 按分类筛选商品 -- @1.4 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户选择分类 "图书" 筛选商品 ... undefined in 0.000s
+    那么 系统返回该分类下的商品列表 ... undefined in 0.000s
+    并且 商品列表页面显示分类筛选结果 ... undefined in 0.000s
+    并且 返回的商品都属于分类 "图书" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 按分类筛选商品 -- @1.4 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 按分类筛选商品 -- @1.4 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="按价格排序商品 -- @1.1 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 按价格排序商品 -- @1.1 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户选择按价格 "ASC" 排序 ... undefined in 0.000s
+    那么 系统返回排序后的商品列表 ... undefined in 0.000s
+    并且 商品列表页面显示按价格排序的商品 ... undefined in 0.000s
+    并且 商品按价格 "ASC" 排列 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 按价格排序商品 -- @1.1 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 按价格排序商品 -- @1.1 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="按价格排序商品 -- @1.2 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 按价格排序商品 -- @1.2 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户选择按价格 "DESC" 排序 ... undefined in 0.000s
+    那么 系统返回排序后的商品列表 ... undefined in 0.000s
+    并且 商品列表页面显示按价格排序的商品 ... undefined in 0.000s
+    并且 商品按价格 "DESC" 排列 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 按价格排序商品 -- @1.2 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 按价格排序商品 -- @1.2 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="按名称排序商品 -- @1.1 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 按名称排序商品 -- @1.1 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户选择按名称 "ASC" 排序 ... undefined in 0.000s
+    那么 系统返回排序后的商品列表 ... undefined in 0.000s
+    并且 商品列表页面显示按名称排序的商品 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 按名称排序商品 -- @1.1 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 按名称排序商品 -- @1.1 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="按名称排序商品 -- @1.2 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 按名称排序商品 -- @1.2 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户选择按名称 "DESC" 排序 ... undefined in 0.000s
+    那么 系统返回排序后的商品列表 ... undefined in 0.000s
+    并且 商品列表页面显示按名称排序的商品 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 按名称排序商品 -- @1.2 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 按名称排序商品 -- @1.2 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="组合筛选和搜索" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 组合筛选和搜索
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户输入搜索关键词 "手机"，选择分类 "电子产品"，按价格 "ASC" 排序 ... undefined in 0.000s
+    那么 系统返回匹配的商品列表 ... undefined in 0.000s
+    并且 商品列表页面显示筛选和搜索结果 ... undefined in 0.000s
+    并且 返回的商品名称包含 "手机" 且属于 "电子产品" 分类 ... undefined in 0.000s
+    并且 商品按价格升序排列 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 组合筛选和搜索
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 组合筛选和搜索
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="成功获取商品详情" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 成功获取商品详情
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 商品ID "1" 存在 ... undefined in 0.000s
+    当 用户请求商品详情，商品ID为 "1" ... undefined in 0.000s
+    那么 系统返回完整的商品信息 ... undefined in 0.000s
+    并且 包含商品描述、规格、库存、评价等详细信息 ... undefined in 0.000s
+    并且 商品详情页面显示完整的商品信息 ... undefined in 0.000s
+    并且 显示商品图片、价格、库存状态 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 成功获取商品详情
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 成功获取商品详情
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="获取不存在商品的详情" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 获取不存在商品的详情
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 商品ID "99999" 不存在 ... undefined in 0.000s
+    当 用户请求商品详情，商品ID为 "99999" ... undefined in 0.000s
+    那么 系统返回404错误 ... undefined in 0.000s
+    并且 错误信息包含 "商品不存在" ... undefined in 0.000s
+    并且 页面显示 "商品不存在" 的提示信息 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 获取不存在商品的详情
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 获取不存在商品的详情
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="商品ID参数验证 -- @1.1 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 商品ID参数验证 -- @1.1 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户请求商品详情，商品ID为 "0" ... undefined in 0.000s
+    那么 系统返回400错误 ... undefined in 0.000s
+    并且 错误信息包含 "商品ID必须是大于0的整数" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 商品ID参数验证 -- @1.1 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 商品ID参数验证 -- @1.1 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="商品ID参数验证 -- @1.2 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 商品ID参数验证 -- @1.2 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户请求商品详情，商品ID为 "-1" ... undefined in 0.000s
+    那么 系统返回400错误 ... undefined in 0.000s
+    并且 错误信息包含 "商品ID必须是大于0的整数" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 商品ID参数验证 -- @1.2 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 商品ID参数验证 -- @1.2 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="商品ID参数验证 -- @1.3 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 商品ID参数验证 -- @1.3 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户请求商品详情，商品ID为 "abc" ... undefined in 0.000s
+    那么 系统返回400错误 ... undefined in 0.000s
+    并且 错误信息包含 "商品ID必须是大于0的整数" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 商品ID参数验证 -- @1.3 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 商品ID参数验证 -- @1.3 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="商品ID参数验证 -- @1.4 " status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景大纲: 商品ID参数验证 -- @1.4 
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 用户请求商品详情，商品ID为 "null" ... undefined in 0.000s
+    那么 系统返回400错误 ... undefined in 0.000s
+    并且 错误信息包含 "商品ID必须是大于0的整数" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 商品ID参数验证 -- @1.4 
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 商品ID参数验证 -- @1.4 
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="商品详情页面交互" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 商品详情页面交互
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 商品ID "1" 存在 ... undefined in 0.000s
+    并且 用户在商品详情页面 ... undefined in 0.000s
+    当 用户查看商品详情 ... undefined in 0.000s
+    那么 页面显示商品的所有详细信息 ... undefined in 0.000s
+    并且 用户可以查看商品图片 ... undefined in 0.000s
+    并且 用户可以查看商品规格 ... undefined in 0.000s
+    并且 用户可以查看用户评价 ... undefined in 0.000s
+    并且 显示添加到购物车按钮 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 商品详情页面交互
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 商品详情页面交互
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="API - 成功获取商品列表" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: API - 成功获取商品列表
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 我通过API请求商品列表 ... undefined in 0.000s
+    那么 API返回状态码200 ... undefined in 0.000s
+    并且 API响应包含商品列表数据 ... undefined in 0.000s
+    并且 商品列表包含ID、名称、价格、图片等字段 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: API - 成功获取商品列表
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: API - 成功获取商品列表
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="API - 带分页参数获取商品列表" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: API - 带分页参数获取商品列表
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 我通过API请求商品列表，页码为 2，每页数量为 5 ... undefined in 0.000s
+    那么 API返回状态码200 ... undefined in 0.000s
+    并且 API响应包含分页信息 ... undefined in 0.000s
+    并且 返回的商品数量不超过 5 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: API - 带分页参数获取商品列表
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: API - 带分页参数获取商品列表
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="API - 搜索商品" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: API - 搜索商品
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 我通过API搜索关键词 "手机" ... undefined in 0.000s
+    那么 API返回状态码200 ... undefined in 0.000s
+    并且 API响应包含匹配的商品列表 ... undefined in 0.000s
+    并且 商品名称包含关键词 "手机" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: API - 搜索商品
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: API - 搜索商品
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="API - 按分类筛选商品" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: API - 按分类筛选商品
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 我通过API筛选分类 "电子产品" ... undefined in 0.000s
+    那么 API返回状态码200 ... undefined in 0.000s
+    并且 API响应包含该分类的商品列表 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: API - 按分类筛选商品
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: API - 按分类筛选商品
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="API - 商品列表排序" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: API - 商品列表排序
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 我通过API请求商品列表，按价格升序排序 ... undefined in 0.000s
+    那么 API返回状态码200 ... undefined in 0.000s
+    并且 API响应包含排序后的商品列表 ... undefined in 0.000s
+    并且 商品按价格升序排列 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: API - 商品列表排序
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: API - 商品列表排序
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="API - 获取商品详情" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: API - 获取商品详情
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 商品ID "1" 存在 ... undefined in 0.000s
+    当 我通过API请求商品详情，商品ID为 "1" ... undefined in 0.000s
+    那么 API返回状态码200 ... undefined in 0.000s
+    并且 API响应包含完整的商品信息 ... undefined in 0.000s
+    并且 商品信息包含描述、规格、库存、评价等字段 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: API - 获取商品详情
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: API - 获取商品详情
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="API - 获取不存在商品的详情" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: API - 获取不存在商品的详情
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 商品ID "99999" 不存在 ... undefined in 0.000s
+    当 我通过API请求商品详情，商品ID为 "99999" ... undefined in 0.000s
+    那么 API返回状态码404 ... undefined in 0.000s
+    并且 API响应包含商品不存在的错误信息 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: API - 获取不存在商品的详情
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: API - 获取不存在商品的详情
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="API - 无效的分页参数" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: API - 无效的分页参数
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 我通过API请求商品列表，页码为 0 ... undefined in 0.000s
+    那么 API返回状态码400 ... undefined in 0.000s
+    并且 API响应包含参数验证失败的错误信息 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: API - 无效的分页参数
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: API - 无效的分页参数
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="API - 无效的商品ID" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: API - 无效的商品ID
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 我通过API请求商品详情，商品ID为 "invalid" ... undefined in 0.000s
+    那么 API返回状态码400 ... undefined in 0.000s
+    并且 API响应包含商品ID格式错误的信息 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: API - 无效的商品ID
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: API - 无效的商品ID
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase><testcase classname="product_management.商品管理" name="API - 搜索关键词长度验证" status="error" time="0"><error type="NoneType" message="None">
+<![CDATA[
+Failing step: 假设 系统已经启动并运行正常 ... undefined in 0.000s
+Location: features/product_management.feature:8
+None]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: API - 搜索关键词长度验证
+    假设 系统已经启动并运行正常 ... undefined in 0.000s
+    并且 测试数据库已经初始化 ... undefined in 0.000s
+    并且 系统中存在商品数据 ... undefined in 0.000s
+    假设 系统中存在商品数据 ... undefined in 0.000s
+    当 我通过API搜索超长关键词 ... undefined in 0.000s
+    那么 API返回状态码400 ... undefined in 0.000s
+    并且 API响应包含关键词长度限制的错误信息 ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: API - 搜索关键词长度验证
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: API - 搜索关键词长度验证
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase></testsuite>
