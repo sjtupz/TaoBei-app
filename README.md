@@ -62,7 +62,7 @@ TaoBei-app/
    ```bash
    npm run build
    ```
-   构建后的文件将生成在`/src/frontend/dist/`目录
+   - 构建后的文件将生成在`/src/frontend/dist/`目录
 
 2. **启动后端服务**
    ```bash
@@ -74,7 +74,7 @@ TaoBei-app/
    cd src/frontend
    npm run preview
    ```
-   此时，可以在4173端口预览构建结果
+   - 此时，可以在`http://localhost:4173`预览构建结果
 
 
 
@@ -86,9 +86,10 @@ TaoBei-app/
 - 数据库: SQLite (`src/database/taobei.db`，自动初始化)
 
 #### 前端配置 (`src/frontend/`)
-- 端口: 5173 (Vite 默认)
+- 开发端口: 5173 (Vite 开发服务器默认端口)
+- 预览端口: 4173 (Vite 预览服务器默认端口)
 - API 代理: 自动代理 `/api` 请求到 `http://localhost:3001`
-- 构建输出: `/src/frontend/dist/` 目录
+- 构建输出: `src/frontend/dist/` 目录
 
 
 
