@@ -1,0 +1,34 @@
+<testsuite name="simple_login.简单登录测试" tests="1" errors="0" failures="0" skipped="0" time="0.003933" timestamp="2025-10-27T16:27:25.901394" hostname="Calvino"><testcase classname="simple_login.简单登录测试" name="访问登录页面" status="passed" time="0.003933"><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 访问登录页面
+    假如 我在登录页面 ... passed in 0.002s
+    当 我输入手机号 "13800138000" ... passed in 0.002s
+    那么 我应该看到登录页面 ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+=== before_scenario 被调用 ===
+开始执行场景: 访问登录页面
+浏览器已初始化: True
+浏览器上下文已初始化: True
+页面驱动已初始化: True
+
+场景执行完成: 访问登录页面
+
+步骤：我在登录页面
+步骤：我输入手机号 13800138000
+步骤：我应该看到登录页面
+✓ 登录页面验证成功
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase></testsuite>

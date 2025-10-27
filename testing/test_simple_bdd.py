@@ -5,7 +5,7 @@ import pytest
 from pytest_bdd import scenarios, given, when, then, parsers
 
 # 导入场景
-scenarios('features/simple_login.feature')
+scenarios('features/login.feature')
 
 @given('我在登录页面')
 def navigate_to_login():

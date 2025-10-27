@@ -10,6 +10,9 @@ from datetime import datetime, timedelta
 class TestDataManager:
     """测试数据管理器"""
     
+    # 添加这个方法来避免pytest收集警告
+    __test__ = False
+    
     def __init__(self):
         self.users = []
         self.products = []
